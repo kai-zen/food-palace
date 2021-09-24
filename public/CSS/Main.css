@@ -1,0 +1,829 @@
+:root {
+    --gold: rgb(255, 155, 0);
+    --black: rgba(12, 12, 12, .9);
+    --dark: #222831;
+    --white: #ededd0;
+}
+
+body {
+    background-color: var(--dark);
+    font-family: 'Markazi Text', serif;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+
+/* منوی فیکس شده بالای صفحه */
+
+#fixed-top-menu {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+    align-items: center;
+    background: var(--white);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    height: 80px;
+}
+
+#logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: white;
+    letter-spacing: -1px;
+}
+
+#logo i {
+    font-size: 32px;
+    color: var(--gold)
+}
+
+.navigation-option {
+    font-size: 1.5rem;
+    color: var(--white);
+    border-bottom: 2px solid transparent;
+}
+
+.navigation-option:hover {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+#hamburger-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menu {
+    z-index: 10;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.menu-line {
+    background-color: var(--white);
+    width: 31px;
+    height: 4px;
+    margin: 7px 0 0px;
+    transition: all 0.5s 0.5s;
+    transform-origin: right;
+    border-radius: 1px;
+}
+
+#hidden-menu {
+    height: 100vh;
+    width: 450px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: -450px;
+    background-color: var(--black);
+    transition: .5s;
+}
+
+#hidden-menu-items {
+    width: 350px;
+    height: 80vh;
+    margin: 10vh auto 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+.hidden-menu-item {
+    color: var(--white);
+    transition: .5s;
+}
+
+.hidden-menu-item:not(:last-child):hover,
+.hidden-menu-item i:hover {
+    color: var(--gold);
+    text-decoration: none;
+    transform: scale(1.2);
+    letter-spacing: 2px;
+}
+
+.hidden-menu-item i {
+    color: var(--white);
+    transition: .5s;
+}
+
+.checkbox:checked~.hamburger-menu {
+    transform: rotateZ(90deg);
+}
+
+.checkbox:checked~.hamburger-menu #menu-line-1 {
+    transform: rotateZ(-45deg);
+}
+
+.checkbox:checked~.hamburger-menu #menu-line-2 {
+    opacity: 0;
+}
+
+.checkbox:checked~.hamburger-menu #menu-line-3 {
+    transform: rotateZ(45deg);
+}
+
+.checkbox:checked~#hidden-menu {
+    right: 0;
+}
+
+
+/* منوی شناور */
+
+#floating-menu {
+    position: fixed;
+    z-index: 15;
+    right: -165px;
+    top: 350px;
+    width: 370px;
+    height: 110px;
+    transform: rotate(90deg);
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 0 0 55px 55px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 28px;
+    padding-top: 15px;
+}
+
+#floating-menu a {
+    color: rgba(0, 0, 0, .8);
+    text-decoration: none;
+    transition: .5s;
+}
+
+#floating-menu a:hover {
+    transform: scale(1.1);
+    letter-spacing: 1px;
+    color: var(--gold);
+}
+
+
+/* بخش اول */
+
+#bkg {
+    width: 100%;
+    background-image: url(../Images/bkg.jpeg);
+    background-size: cover;
+    background-position: right;
+}
+
+#div1 {
+    background-color: rgba(0, 0, 0, .7);
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.title {
+    color: var(--white);
+    position: relative;
+    top: 90px;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#main-title {
+    font-family: 'Merienda', cursive;
+    font-size: 56px;
+}
+
+#subtitle {
+    font-family: 'Dr Sugirama', cursive;
+    font-size: 25px;
+}
+
+#next-prev {
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    display: flex;
+}
+
+#next-prev a {
+    position: relative;
+    height: 65px;
+    width: 65px;
+    opacity: 1;
+    padding: 0 !important;
+}
+
+#next-prev a:last-child {
+    border-radius: 0 25px 0 0;
+}
+
+#next-prev a i {
+    font-size: 50px;
+}
+
+#slider {
+    position: relative;
+    margin-top: 167px;
+    margin-bottom: 10px;
+    left: 15px;
+}
+
+#carousel-inner {
+    border: 3px solid white;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+
+#more-dots {
+    z-index: 10;
+}
+
+#more a,
+#more label {
+    font-size: 25px;
+    color: rgb(41, 40, 40);
+    background-color: rgba(245, 238, 238, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    transition: .5s;
+}
+
+label {
+    cursor: pointer;
+}
+
+.more-icons {
+    opacity: 0;
+}
+
+#hidden-check:checked~#more a:nth-child(2) {
+    right: 64px;
+    opacity: 1;
+}
+
+#hidden-check:checked~#more a:nth-child(3) {
+    right: 116px;
+    opacity: 1;
+}
+
+#hidden-check:checked~#more a:last-child {
+    right: 168px;
+    opacity: 1;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+    padding-right: 7%;
+    font-size: 26px;
+    background-color: rgba(8, 8, 8, .8);
+    border-radius: 25px 0 0 0;
+}
+
+.carousel-caption p {
+    margin: 0 !important;
+}
+
+.carousel-caption a {
+    font-size: 14px;
+}
+
+.carousel-caption .btn-warning {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#dots-box {
+    width: 35%;
+    height: 80px;
+    position: absolute;
+    bottom: 10px;
+    left: 15%;
+}
+
+#dots-box ol {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+#dots-box ol li {
+    min-width: 15px;
+    min-height: 15px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    transition: .5s;
+}
+
+#dots-box ol li.active {
+    border: 4px solid var(--gold);
+    transform: translateY(-15px);
+}
+
+
+/* کامپوننت کتگوری ها */
+
+.categoriesElementRow {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.categoriesElement {
+    color: var(--dark);
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+}
+
+.categoriesElement label {
+    pointer-events: none;
+    border: 2px solid var(--gold);
+    border-radius: 5px;
+    padding: 8px;
+    color: var(--gold);
+}
+
+.catRadio:checked+label {
+    background-color: var(--gold);
+    color: var(--dark);
+}
+
+
+/* بخش دوم */
+
+#div2 {
+    clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
+    padding-top: 35px;
+    padding-bottom: 12%;
+    background-color: var(--white);
+}
+
+#d2-carousel {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+#d2-carousel .carousel-inner {
+    width: 300px;
+    height: 300px;
+    box-shadow: 5px 5px 23px -3px #000000;
+}
+
+#div2 .carousel-control-prev,
+#div2 .carousel-control-next {
+    color: var(--gold);
+    font-size: 3rem;
+    height: 33.3333%;
+    top: 33.3333%;
+}
+
+#d2-left-part-flex {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#h1s-div {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+#d2-left-part-flex div h1 {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    white-space: nowrap;
+    font-size: 3rem;
+}
+
+#d2-left-part-flex p {
+    text-align: right;
+    padding: 0 5%;
+}
+
+#d2-left-part-flex2 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    padding-right: 5%;
+}
+
+#d2-left-part-flex a {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-top: 10px;
+    margin-left: 10%;
+}
+
+#quantity {
+    width: 70px;
+    padding-left: 20px;
+    border: 0;
+    color: var(--white);
+    background-color: var(--gold);
+    font-size: 1.5rem;
+    margin-left: 10%;
+}
+
+
+/* بخش سوم صفحه */
+
+#d3categoriesElement {
+    color: var(--white);
+}
+
+.cardElement {
+    text-align: right;
+    background-color: var(--white);
+    border-radius: 0 0 10px 10px;
+}
+
+.cardElement:hover {
+    color: var(--gold);
+    cursor: pointer;
+}
+
+.card {
+    background-color: var(--dark);
+    border: 0;
+    margin-bottom: 25px;
+    opacity: .9;
+}
+
+.card:hover {
+    opacity: 1;
+}
+
+.cardImage {
+    border-radius: 10px 10px 0 0;
+}
+
+.iconStyle {
+    background-color: var(--black);
+    border-radius: 50%;
+    font-size: 1.6rem;
+    margin-left: 10px;
+    color: var(--white);
+    transition: .5s;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 52px;
+}
+
+.d3IconStyle {
+    width: 35px;
+    height: 35px;
+    line-height: 42px;
+    font-size: 1.2rem;
+    margin-left: 6px;
+}
+
+.custom-shape-divider-top-1631877272 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    background-color: var(--white);
+}
+
+.custom-shape-divider-top-1631877272 svg {
+    position: relative;
+    display: block;
+    width: calc(115% + 1.3px);
+    height: 138px;
+}
+
+.custom-shape-divider-top-1631877272 .shape-fill {
+    fill: var(--dark);
+}
+
+
+/* بخش چهارم صفحه (سرچ) */
+
+#div4 {
+    width: 100%;
+    background-color: var(--white);
+    padding-bottom: 30px;
+}
+
+#searchForm {
+    position: relative;
+    width: 80%;
+    margin: 0 10%;
+    height: 90px;
+    margin-bottom: 30px;
+}
+
+#d4SearchInput {
+    margin-top: 30px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(44, 44, 39, 0.7);
+    height: 60px;
+    border-radius: 30px;
+    border: 0;
+    text-align: right;
+    direction: rtl;
+    padding-right: 20px;
+    font-size: 30px;
+    color: var(--white);
+}
+
+#div4 form button {
+    position: absolute;
+    top: 30px;
+    height: 60px;
+    width: 60px;
+}
+
+#div4 form button:hover {
+    color: var(--gold);
+}
+
+.d4SingleCard {
+    z-index: 15;
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+    height: 150px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+.d4CardImage {
+    float: right;
+    position: absolute;
+    right: 0;
+    border-radius: 0 10px 10px 0;
+    height: 170px;
+    width: 170px;
+}
+
+.d4CardElement {
+    position: absolute;
+    left: 0;
+    width: calc(100% - 170px);
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 10px 0 0 10px;
+    height: 170px;
+}
+
+
+/* فوتر */
+
+.footer-div {
+    text-align: right;
+    font-size: 22px;
+    padding-top: 20px;
+}
+
+.footer-div h1 {
+    font-size: 45px;
+    display: inline;
+    border-bottom: 2px solid var(--gold);
+}
+
+footer {
+    color: var(--white);
+}
+
+#footer-p1 p {
+    margin-top: 35px;
+    line-height: 24px;
+}
+
+#footer-p1-icons {
+    margin-top: 40px;
+}
+
+.iconStyle:hover {
+    color: var(--gold);
+    transform: scale(1.1);
+}
+
+.footer-p2-info {
+    margin-top: 20px;
+    direction: rtl;
+    padding: 10px;
+    font-size: 1.65rem;
+}
+
+.footer-p2-info span {
+    margin-left: 15px;
+}
+
+#footer-p3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+#footer-p3 h1 {
+    position: relative;
+    left: 60%;
+    width: 40%;
+}
+
+#footer-p3 button {
+    margin-top: 20px;
+}
+
+#footer-p3 button:hover {
+    background-color: var(--gold);
+}
+
+#copyright {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* مدال منوها */
+
+#navbarMenusModal {
+    background-color: var(--white);
+    border-radius: 10px;
+    position: relative;
+}
+
+#navbarMenusModalH1 {
+    text-align: center;
+    padding-bottom: 40px;
+    font-size: 4rem;
+}
+
+#navbarMenusModalButtons {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 40px;
+    margin-top: -20px;
+}
+
+#navbarMenusModalButtons button {
+    background-color: var(--dark);
+    border: 0;
+    transition: .5s;
+    padding: 20px 50px;
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+#navbarMenusModalButtons button:hover {
+    background-color: var(--gold);
+    color: var(--dark);
+}
+
+.closeSpan {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.closeSpan:hover {
+    color: red;
+}
+
+
+/* کامپوننت غذای یک دسته */
+
+#foodsComponent,
+#singleFoodComponent {
+    margin-top: 100px;
+    position: relative;
+}
+
+#foodsComponentH1 h1 {
+    color: var(--dark);
+    text-align: center;
+    font-size: 70px;
+    line-height: 80px;
+    background-color: var(--white);
+    border-radius: 15px;
+    display: inline-block;
+    margin-left: 30%;
+    width: 40%;
+    padding: 0 20px;
+    position: relative;
+    margin-bottom: 70px;
+}
+
+
+/* مدال صفحه کاربر */
+
+#userModal {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 40px;
+}
+
+#userModal img {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 20px;
+}
+
+#userModalEmail {
+    direction: rtl;
+}
+
+#userModal div button {
+    font-size: 1.4rem;
+    width: 140px;
+}
+
+#userModal div button:first-child {
+    margin-right: 20px;
+}
+
+
+/* کامپوننت تک غذا */
+
+#singleFoodComponentParent {
+    border-bottom: 5px solid var(--gold);
+}
+
+#singleFoodComponent {
+    color: var(--white);
+    font-size: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    text-align: right;
+    height: 1050px;
+}
+
+#singleFoodComponent img {
+    width: 50%;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+#singleFoodParagraphs {
+    margin-top: 35px;
+    border: 2px solid var(--gold);
+    padding: 20px 10%;
+    border-radius: 20px;
+    transition: .6s;
+}
+
+#singleFoodComponent h1 {
+    font-size: 4rem;
+}
+
+#singleFoodParagraphs p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.singleFoodIcons span {
+    font-size: 2.2rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.singleFoodIcons span:hover {
+    color: var(--gold);
+}

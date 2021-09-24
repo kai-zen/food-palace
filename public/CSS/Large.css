@@ -1,0 +1,114 @@
+@media screen and (min-width: 992px) {
+    #main-title {
+        font-size: 72px;
+    }
+    #next-prev {
+        display: flex;
+        flex-direction: column;
+        top: 530px;
+        left: 65px;
+    }
+    #next-prev a {
+        width: 85px;
+        height: 85px;
+    }
+    #next-prev a:first-child {
+        border-radius: 20px 0 0 0;
+    }
+    #next-prev a:last-child {
+        border-radius: 0 0 0 20px;
+    }
+    #slider {
+        margin-top: 150px;
+    }
+    #carousel-inner {
+        width: 70%;
+        left: 150px;
+        border-radius: 12px;
+    }
+    #more a,
+    #more label {
+        font-size: 28px;
+        width: 55px;
+        height: 55px;
+        top: 10px;
+        right: 12px;
+    }
+    #hidden-check:checked~#more a:nth-child(2) {
+        right: 76px;
+        opacity: 1;
+    }
+    #hidden-check:checked~#more a:nth-child(3) {
+        right: 140px;
+        opacity: 1;
+    }
+    #hidden-check:checked~#more a:last-child {
+        right: 204px;
+        opacity: 1;
+    }
+    .carousel-caption {
+        font-size: 40px;
+    }
+    .carousel-caption a {
+        font-size: 23px;
+    }
+    #dots-box {
+        left: 22%;
+    }
+    #dots-box ol li {
+        width: 20px;
+        height: 20px;
+    }
+    #div2 {
+        clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
+    }
+    #d2-carousel .carousel-inner {
+        width: 400px;
+        height: 400px;
+    }
+    #d2-left-part-flex div h1 {
+        font-size: 3.5rem;
+        top: 0;
+    }
+    #d2-left-part-flex p {
+        font-size: 1.4rem;
+        margin-bottom: 40px;
+    }
+    .categoriesElement {
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #next-prev {
+        top: 605px;
+    }
+    #div2 {
+        clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+        padding-bottom: 5%;
+    }
+    #d2-carousel .carousel-inner {
+        width: 450px;
+        height: 450px;
+    }
+    #d2-left-part-flex div h1 {
+        font-size: 4rem;
+        top: -20px;
+    }
+    #d2-left-part-flex p {
+        font-size: 1.5rem;
+    }
+    #d2-left-part-flex a {
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+    #quantity {
+        width: 70px;
+        padding-left: 20px;
+        border: 0;
+        color: #fff;
+        background-color: var(--gold);
+        font-size: 1.5rem;
+        margin-left: 10%;
+    }
+}

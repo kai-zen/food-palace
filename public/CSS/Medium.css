@@ -1,0 +1,22 @@
+@media screen and (min-width: 768px) {
+    #carousel-inner {
+        width: 80%;
+        left: 0;
+    }
+    .carousel-caption {
+        font-size: 34px;
+    }
+    .carousel-caption a {
+        font-size: 18px;
+    }
+    #dots-box ol li {
+        width: 17.5px;
+        height: 17.5px;
+    }
+    #div2 {
+        padding-bottom: 5%;
+    }
+    #d2-menus {
+        justify-content: space-around;
+    }
+}
