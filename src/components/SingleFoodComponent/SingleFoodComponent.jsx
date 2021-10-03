@@ -1,6 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 const SingleFood = () => {
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
+    useEffect(scrollToTop, []);
     return ( 
         <div id="singleFoodComponentParent">
             <div id="singleFoodComponent" className="container">

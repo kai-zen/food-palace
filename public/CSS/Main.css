@@ -12,6 +12,7 @@ body {
 
 a:hover {
     text-decoration: none;
+    color: var(--white);
 }
 
 .mt20 {
@@ -35,7 +36,7 @@ a:hover {
 #logo {
     font-family: 'Dancing Script', cursive;
     font-size: 40px;
-    color: white;
+    color: var(--white);
     letter-spacing: -1px;
 }
 
@@ -135,6 +136,36 @@ a:hover {
 
 .checkbox:checked~#hidden-menu {
     right: 0;
+}
+
+
+/* منو کوچیکه */
+
+#miniNav {
+    color: var(--gold);
+    position: fixed;
+    z-index: 1030;
+    font-size: 1.5rem;
+    margin-top: 95px;
+    text-align: right;
+    border-radius: 0 40px 40px 0;
+    transition: .5s;
+}
+
+#miniNav i {
+    margin-right: 20px;
+}
+
+#miniNav i:hover {
+    color: var(--white);
+    transform: scale(1.2);
+}
+
+#miniNav span {
+    padding: 1px 5px;
+    position: relative;
+    right: 26px;
+    bottom: 15px;
 }
 
 
@@ -473,11 +504,7 @@ label {
     background-color: var(--dark);
     border: 0;
     margin-bottom: 25px;
-    opacity: .9;
-}
-
-.card:hover {
-    opacity: 1;
+    cursor: pointer;
 }
 
 .cardImage {
@@ -692,7 +719,7 @@ footer {
     margin-top: -20px;
 }
 
-#navbarMenusModalButtons button {
+.menusModalButton {
     background-color: var(--dark);
     border: 0;
     transition: .5s;
@@ -701,7 +728,7 @@ footer {
     color: var(--white);
 }
 
-#navbarMenusModalButtons button:hover {
+.menusModalButton:hover {
     background-color: var(--gold);
     color: var(--dark);
 }
@@ -768,21 +795,17 @@ footer {
     direction: rtl;
 }
 
-#userModal div button {
+#userModal div .btn {
     font-size: 1.4rem;
     width: 140px;
 }
 
-#userModal div button:first-child {
+#userModal div .btn:first-child {
     margin-right: 20px;
 }
 
 
 /* کامپوننت تک غذا */
-
-#singleFoodComponentParent {
-    border-bottom: 5px solid var(--gold);
-}
 
 #singleFoodComponent {
     color: var(--white);
@@ -826,4 +849,36 @@ footer {
 
 .singleFoodIcons span:hover {
     color: var(--gold);
+}
+
+
+/* کامپوننت درخواست ورود به حساب */
+
+#loginRequest {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 14vh;
+    background-color: var(--gold);
+    z-index: 100;
+    opacity: .8;
+}
+
+#loginRequest:hover {
+    opacity: 1;
+}
+
+#loginRequest p {
+    position: fixed;
+    right: 10%;
+    font-size: 1.4rem;
+    bottom: 1vh;
+}
+
+#loginRequestButton {
+    padding: 5px 20px;
+    position: fixed;
+    font-size: 1.4rem;
+    left: 10%;
+    bottom: 3vh;
 }

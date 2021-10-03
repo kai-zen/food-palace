@@ -1,6 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 const Login = () => {
+    const closeLoginRequset = () => {
+        document.getElementById('loginRequest').style.display = 'none';
+    }
+    useEffect(closeLoginRequset, []);
     return ( 
     <div id="wholeFormContainer">
         <div id="fadeLayer">

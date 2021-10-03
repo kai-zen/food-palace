@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserModal = ({handleShowUserModal}) => {
     return ( 
@@ -8,8 +9,8 @@ const UserModal = ({handleShowUserModal}) => {
             <p className="userModalP">نام: رضا مولایی</p>
             <p className="userModalP" id="userModalEmail">ایمیل:  rezamoalei@gmail.com</p>
             <div>
-                <button className="btn btn-warning">سبد خرید</button>
-                <button className="btn btn-danger">علاقه مندی ها</button>
+                <Link className="btn btn-warning" to='/foods' onClick={handleShowUserModal}>سبد خرید</Link>
+                <Link className="btn btn-danger" to='/foods' onClick={handleShowUserModal}>علاقه مندی ها</Link>
             </div>
             <span onClick={handleShowUserModal} className="closeSpan"><i className='fas fa-times'></i></span>
         </div>

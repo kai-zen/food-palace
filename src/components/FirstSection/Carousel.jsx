@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Carousel = () => {
     return ( 
@@ -20,7 +21,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>پیتزای سبزیجات</p>
                   <a href="/#" className="btn btn-warning">سفارش</a>
-                  <a href="/#" className="btn btn-danger">صفحه غذا</a>
+                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
               </div>
               <div className="carousel-item">
@@ -28,7 +29,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>پنکیک کاراملی</p>
                   <a href="/#" className="btn btn-warning">سفارش</a>
-                  <a href="/#" className="btn btn-danger">صفحه غذا</a>
+                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
               </div>
               <div className="carousel-item">
@@ -36,7 +37,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>رپ مرغ و سبزیجات</p>
                   <a href="/#" className="btn btn-warning">سفارش</a>
-                  <a href="/#" className="btn btn-danger">صفحه غذا</a>
+                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
               </div>
               <div className="carousel-item">
@@ -44,7 +45,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>دوبل برگر ویژه</p>
                   <a href="/#" className="btn btn-warning">سفارش</a>
-                  <a href="/#" className="btn btn-danger">صفحه غذا</a>
+                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
               </div>
               <div className="carousel-item">
@@ -52,7 +53,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>ماهی کبابی(رژیمی)</p>
                   <a href="/#" className="btn btn-warning">سفارش</a>
-                  <a href="/#" className="btn btn-danger">صفحه غذا</a>
+                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
               </div>
               <input type="checkbox" id="hidden-check" hidden />
@@ -66,9 +67,9 @@ const Carousel = () => {
                 <a href="/#" className="more-icons" title="افزودن به سبد خرید">
                   <i className="fas fa-shopping-cart" />
                 </a>
-                <a href="/#" className="more-icons" title="اطلاعات بیشتر">
+                <Link to="/singleFood" className="more-icons" title="اطلاعات بیشتر">
                   <i className="fas fa-info" />
-                </a>
+                </Link>
               </div>
             </div>
             <div id="dots-box">

@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Carousel from './Carousel';
 
 const FirstSection = () => {
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
+    useEffect(scrollToTop, []);
     return ( 
     <div className="bkg" id="bkg">
         <div className="bkg" id="div1">
