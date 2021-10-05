@@ -15,6 +15,13 @@ const MainNav = () => {
     const handleShowUserModal = () => {
         setShowUserModal(!showUserModal);
     };
+    const [userInfo, setUserInfo] = useState({ persons : [
+        {
+        'age' : '35',
+        'name' : 'رضا مولایی',
+        'email' : 'rezamoalei@gmail.com'
+      }
+      ]});
     return (
         <Fragment>
             <nav id="fixed-top-menu" className="fixed-top row">
@@ -46,7 +53,7 @@ const MainNav = () => {
                         aria-labelledby="contained-modal-title-vcenter"
                         centered
                         show={showUserModal}>
-                        <UserModal handleShowUserModal={handleShowUserModal}/>
+                        <UserModal handleShowUserModal={handleShowUserModal} userInfo={userInfo.persons[0]}/>
                     </Modal>
                     <Link to="/foods" className="hidden-menu-item">سبد خرید</Link>
                     <p className="hidden-menu-item"  style={{cursor: 'pointer'}}>رزرو میز</p>

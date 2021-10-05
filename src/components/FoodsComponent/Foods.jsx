@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Title from './Title';
 import Cards from '../ThirdSection/Cards';
 
-const Foods = () => {
+const Foods = ({foodsToShow}) => {
     const scrollToTop = () => {
         window.scrollTo(0, 0);
     }
@@ -10,7 +10,7 @@ const Foods = () => {
     return ( 
         <div className="container" id="foodsComponent">
             <Title/>
-            <Cards/>
+            <Cards foodsToShow={foodsToShow}/>
         </div>
      );
 }
