@@ -28,8 +28,8 @@ const MainNav = () => {
                 <Link to="/" id="logo"><i className="fa fa-utensils" /> Food Palace</Link>
                 <div id="navigation-options" className="offset-1 col-7 d-none d-lg-flex justify-content-around">
                 <a href="#footer" className="navigation-option">تماس با ما</a>
-                <Link to="/foods" className="navigation-option" id="login-1">علاقه مندی ها</Link>
-                <Link to="/foods" className="navigation-option" id="login-2">سبد خرید</Link>
+                <Link to="/favorites" className="navigation-option" id="login-1">علاقه مندی ها</Link>
+                <Link to="/shopping-cart" className="navigation-option" id="login-2">سبد خرید</Link>
                 <p className="navigation-option" onClick={handleShowMenusModal} style={{cursor: 'pointer'}}>منو ها</p>
                 <Modal
                 aria-labelledby="contained-modal-title-vcenter"
@@ -55,9 +55,9 @@ const MainNav = () => {
                         show={showUserModal}>
                         <UserModal handleShowUserModal={handleShowUserModal} userInfo={userInfo.persons[0]}/>
                     </Modal>
-                    <Link to="/foods" className="hidden-menu-item">سبد خرید</Link>
+                    <Link to="/shopping-cart" className="hidden-menu-item">سبد خرید</Link>
                     <p className="hidden-menu-item"  style={{cursor: 'pointer'}}>رزرو میز</p>
-                    <Link to="/foods" className="hidden-menu-item">علاقه مندی ها</Link>
+                    <Link to="/favorites" className="hidden-menu-item">علاقه مندی ها</Link>
                     <a href="#footer" className="hidden-menu-item">ارتباط با ما</a>
                     <div className="hidden-menu-item row">
                         <a href="/#" className="col-4">
@@ -75,9 +75,9 @@ const MainNav = () => {
                 </div>
                 <div id="miniNav">
                     <a onClick={handleShowUserModal}><i className='fas fa-user'></i></a>
-                    <Link to='/foods'><i className='fas fa-heart'></i></Link>
+                    <Link to='/favorites'><i className='fas fa-heart'></i></Link>
                     <span class="badge bg-secondary">0</span>
-                    <Link to='/foods'><i className='fas fa-shopping-cart'></i></Link>
+                    <Link to='/shopping-cart'><i className='fas fa-shopping-cart'></i></Link>
                     <span class="badge bg-secondary">0</span>
                 </div>
             </nav>

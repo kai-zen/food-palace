@@ -79,19 +79,19 @@ export const allFoodsInfo = {
     },
     steakeMorgh: {
         name: 'استیک مرغ',
-        price: '32000',
+        price: '29000',
         category: 'fastfood',
         orderQuantity: '51'
     },
     pirashki: {
         name: 'پیراشکی',
-        price: '32000',
+        price: '16000',
         category: 'fastfood',
         orderQuantity: '90'
     },
     sokhari: {
         name: 'فیله سوخاری',
-        price: '32000',
+        price: '40000',
         category: 'fastfood',
         orderQuantity: '89'
     },

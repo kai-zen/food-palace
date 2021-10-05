@@ -15,7 +15,7 @@ const Login = () => {
             <div id="sectionsContainer">
                 <div id="signInSection" className="mainSections">
                     <div className="eachInputGroup">
-                        <label htmlFor="user" className="typingInputLabel">نام کاربری</label>
+                        <label htmlFor="user" className="typingInputLabel">آدرس ایمیل</label>
                         <input id="user" type="text" className="typingInput"/>
                     </div>
                     <div className="eachInputGroup">

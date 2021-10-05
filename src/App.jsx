@@ -14,7 +14,7 @@ import Foods from './components/FoodsComponent/Foods';
 import SingleFood from './components/SingleFoodComponent/SingleFoodComponent';
 import Login from './components/LoginComponent/LoginComponent';
 
-const App = (props) => {
+const App = () => {
   const [allFoods, setAllFoods] = useState([
     allFoodsInfo.ghormeSabzi,
     allFoodsInfo.gheyme,
@@ -41,6 +41,11 @@ const App = (props) => {
     allFoodsInfo.cake,
     allFoodsInfo.sweet,
   ]);
+
+  const sonatiFoods = [...allFoods.filter(eachFood => eachFood.category==='sonati')];
+  const fastfoods = [...allFoods.filter(eachFood => eachFood.category==='fastfood')];
+  const giahiFoods = [...allFoods.filter(eachFood => eachFood.category==='giahi')];
+
   const [favoriteFoods, setFavoriteFoods] = useState([]);
   const [cartFoods, setCartFoods] = useState([]);
   return (
@@ -49,6 +54,11 @@ const App = (props) => {
         <FloatingMenu/>    
         <Route path="/singleFood" component={SingleFood} />
         <Route path="/foods" render={()=><Foods foodsToShow={allFoods}/>} />
+        <Route path="/sonati-foods" render={()=><Foods foodsToShow={sonatiFoods} titleOfThisMenu='غذاهای سنتی'/>} />
+        <Route path="/fastfoods" render={()=><Foods foodsToShow={fastfoods} titleOfThisMenu='فست فود ها'/>} />
+        <Route path="/giahi-foods" render={()=><Foods foodsToShow={giahiFoods} titleOfThisMenu='غذاهای گیاهی'/> } />
+        <Route path="/favorites" render={()=><Foods foodsToShow={favoriteFoods} titleOfThisMenu='مورد علاقه ها'/>} />
+        <Route path="/shopping-cart" render={()=><Foods foodsToShow={cartFoods} titleOfThisMenu='سبد خرید'/>} />
         <Route path="/login" component={Login} />
         <Route path="/" exact>
           <FirstSection/>

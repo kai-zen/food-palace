@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 
-const SingleFood = () => {
+const SingleFood = ({location}) => {
     const scrollToTop = () => {
         window.scrollTo(0, 0);
     }
@@ -8,12 +8,14 @@ const SingleFood = () => {
     return ( 
         <div id="singleFoodComponentParent">
             <div id="singleFoodComponent" className="container">
-                <img src="Images/d35.jpg" alt="" />
+                <img
+                src={`Images/${location.state.category}/${location.state.name}.jpg`}
+                alt="" />
                 <div id="singleFoodParagraphs">
-                    <h1>استیک گوساله</h1>
+                    <h1>{location.state.name}</h1>
                     <p>محتویات:<br/>ررنمئبیریبکئنبکنمبریبرکئیررکیبئنمکبریبکئذیبنئکئکنمیبذبلذبذل</p>
-                    <p>قیمت: 20000 تومان</p>
-                    <p>تعداد سفارشات: 28 بار</p>
+                    <p>قیمت: {location.state.price} تومان</p>
+                    <p>تعداد سفارشات: {location.state.orderQuantity} بار</p>
                     <div className="singleFoodIcons">
                         <span><i className="fas fa-heart"></i></span>
                         <span><i className="fas fa-plus"></i></span>

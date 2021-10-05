@@ -489,6 +489,20 @@ label {
     color: var(--white);
 }
 
+.card {
+    background-color: var(--dark);
+    border: 0;
+    margin-bottom: 25px;
+}
+
+.cardImage {
+    border-radius: 10px 10px 0 0;
+}
+
+.cardImage:hover {
+    cursor: pointer;
+}
+
 .cardElement {
     text-align: right;
     background-color: var(--white);
@@ -497,18 +511,6 @@ label {
 
 .cardElement:hover {
     color: var(--gold);
-    cursor: pointer;
-}
-
-.card {
-    background-color: var(--dark);
-    border: 0;
-    margin-bottom: 25px;
-    cursor: pointer;
-}
-
-.cardImage {
-    border-radius: 10px 10px 0 0;
 }
 
 .iconStyle {
@@ -523,6 +525,7 @@ label {
     height: 45px;
     text-align: center;
     line-height: 52px;
+    cursor: pointer;
 }
 
 .d3IconStyle {

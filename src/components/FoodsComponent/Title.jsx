@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Title = () => {
+const Title = ({titleOfThisMenu}) => {
     return ( 
         <div id="foodsComponentH1">
-            <h1>فست فود ها</h1>
+            <h1>{titleOfThisMenu}</h1>
         </div>
      );
 }
