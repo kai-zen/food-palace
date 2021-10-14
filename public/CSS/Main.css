@@ -522,34 +522,50 @@ label {
     color: var(--gold);
 }
 
-.d4SingleCard {
-    z-index: 15;
+.d4SearchResult {
     display: flex;
-    width: 80%;
-    margin-left: 10%;
+    width: 70%;
+    font-size: 30px;
+    color: var(--white);
+    background-color: rgba(44, 44, 39, .7);
+    border-radius: 40px;
+    flex-direction: row-reverse;
+    margin-left: 15%;
+    height: 80px;
     position: relative;
-    height: 150px;
-    margin-bottom: 40px;
-    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: .5s;
 }
 
-.d4CardImage {
-    float: right;
-    position: absolute;
-    right: 0;
-    border-radius: 0 10px 10px 0;
-    height: 170px;
-    width: 170px;
+.d4SearchResult:hover {
+    background-color: var(--dark);
+    transform: scale(1.05);
 }
 
-.d4CardElement {
+.d4SearchResult img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.d4SearchResult h2 {
+    margin-right: 20px;
+    line-height: 75px;
+}
+
+.d4SearchResult button {
     position: absolute;
     left: 0;
-    width: calc(100% - 170px);
-    background-color: var(--dark);
+    height: 80px;
+    border-radius: 50%;
+    width: 80px;
     color: var(--white);
-    border-radius: 10px 0 0 10px;
-    height: 170px;
+    direction: rtl;
+    background-color: var(--dark)
+}
+
+.d4SearchResult button:hover {
+    background-color: var(--gold);
 }
 
 

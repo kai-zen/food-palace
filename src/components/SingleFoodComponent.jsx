@@ -5,10 +5,9 @@ const SingleFood = ({location}) => {
     const context = useContext(MainContext);
     const favoriteFoods = context.favoriteFoods;
     const cartFoods = context.cartFoods;
+    const handleToggleToList = context.handleToggleToList;
 
-    let handleToggleToList = context.handleToggleToList;
-    let thisFoodIndex = location.state.key;
-    let thisFood = context.allFoods[thisFoodIndex];
+    let thisFood = context.allFoods[location.state.key];
 
     useEffect(() => {
         for(let i=0; i < favoriteFoods.length; i++){
@@ -21,12 +20,11 @@ const SingleFood = ({location}) => {
                 document.getElementById(`cartIcon${cartFoods[i].id}`).style.color = 'green';
             }
         };
+    });
+
+    useEffect(()=>{
         window.scrollTo(0, 0);
-    }, []);
-
-
-        
-
+    }, [])
 
     return ( 
         <div id="singleFoodComponentParent">
@@ -41,11 +39,11 @@ const SingleFood = ({location}) => {
                     <p>تعداد سفارشات: {thisFood.orderQuantity} بار</p>
                     <div className="singleFoodIcons">
                         <span id={`heartIcon${thisFood.id}`}>
-                            <i className="fas fa-heart" onClick={(event)=>handleToggleToList(event.target, thisFoodIndex, true, true)}>
+                            <i className="fas fa-heart" onClick={(event)=>handleToggleToList(event.target, thisFood.id, true, true)}>
                             </i>
                         </span>
                         <span id={`cartIcon${thisFood.id}`}>
-                            <i className="fas fa-shopping-cart" onClick={(event)=>handleToggleToList(event.target, thisFoodIndex, false, true)}>
+                            <i className="fas fa-shopping-cart" onClick={(event)=>handleToggleToList(event.target, thisFood.id, false, true)}>
                             </i>
                         </span>
                     </div>

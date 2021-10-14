@@ -1,21 +1,33 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 import MainContext from '../../ContextAPI';
 
 const Carousel = () => {
   const context = useContext(MainContext);
   const handleToggleToList = context.handleToggleToList;
+  const allFoods = context.allFoods;
 
-// 18 20 11 9 6
-useEffect(() => {
-  const cartFoods = context.cartFoods;
-  cartFoods.map(cartFood => {
-    if(cartFood.id === 18 || cartFood.id === 20 || cartFood.id === 11 || cartFood.id === 9 || cartFood.id === 6){
-      document.getElementById(`cartBtn${cartFood.id}`).innerText = 'حذف از سبد';
-    }
-  });
-  window.scrollTo(0, 0);
-},[]);
+  const [clickedFoodId,setClickedFoodId] = useState();
+  const [goToSingleFood, setGoToSingleFood] = useState(false);
+  const redirectToSingleFood = (id) => {        
+      setGoToSingleFood(true);
+      setClickedFoodId(id);
+  };
+
+    useEffect(() => {
+      const cartFoods = context.cartFoods;
+      cartFoods.map(cartFood => {
+        console.log(cartFood);
+        if(cartFood.id === '18' || cartFood.id === '20' || cartFood.id === '11' || cartFood.id === '9' || cartFood.id === '6'){
+          document.getElementById(`cartBtn${cartFood.id}`).innerText = 'حذف از سبد';
+        }
+      });
+    });
+
+    useEffect(()=>{
+      window.scrollTo(0, 0);
+    }, [])
 
     return (
         <div className="row">
@@ -36,7 +48,7 @@ useEffect(() => {
                 <div className="carousel-caption">
                   <p>پیتزای سبزیجات</p>
                   <a className="btn btn-warning" id='cartBtn18' onClick={(event)=>handleToggleToList(event.target, '18', false, false)}>سفارش</a>
-                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
+                  <a onClick={() => redirectToSingleFood(18)} className="btn btn-danger">صفحه غذا</a>
                 </div>
               </div>
               <div className="carousel-item">
@@ -44,7 +56,7 @@ useEffect(() => {
                 <div className="carousel-caption">
                   <p>پنکیک کاراملی</p>
                   <a className="btn btn-warning" id='cartBtn20' onClick={(event)=>handleToggleToList(event.target, '20', false, false)}>سفارش</a>
-                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
+                  <a onClick={() => redirectToSingleFood(20)} className="btn btn-danger">صفحه غذا</a>
                 </div>
               </div>
               <div className="carousel-item">
@@ -52,7 +64,7 @@ useEffect(() => {
                 <div className="carousel-caption">
                   <p>رپ مرغ و سبزیجات</p>
                   <a className="btn btn-warning" id='cartBtn11' onClick={(event)=>handleToggleToList(event.target, '11', false, false)}>سفارش</a>
-                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
+                  <a onClick={() => redirectToSingleFood(11)} className="btn btn-danger">صفحه غذا</a>
                 </div>
               </div>
               <div className="carousel-item">
@@ -60,7 +72,7 @@ useEffect(() => {
                 <div className="carousel-caption">
                   <p>دوبل برگر ویژه</p>
                   <a className="btn btn-warning" id='cartBtn9' onClick={(event)=>handleToggleToList(event.target, '9', false, false)}>سفارش</a>
-                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
+                  <a onClick={() => redirectToSingleFood(9)} className="btn btn-danger">صفحه غذا</a>
                 </div>
               </div>
               <div className="carousel-item">
@@ -68,7 +80,7 @@ useEffect(() => {
                 <div className="carousel-caption">
                   <p>ماهی کبابی(رژیمی)</p>
                   <a className="btn btn-warning" id='cartBtn6' onClick={(event)=>handleToggleToList(event.target, '6', false, false)}>سفارش</a>
-                  <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
+                  <a onClick={() => redirectToSingleFood(6)} className="btn btn-danger">صفحه غذا</a>
                 </div>
               </div>
             </div>
@@ -82,6 +94,13 @@ useEffect(() => {
               </ol>
             </div>
           </div>
+          {goToSingleFood ? <Redirect
+                        to={{
+                            pathname: `/singleFood/${allFoods[clickedFoodId].id}`,
+                            state: {key: allFoods[clickedFoodId].id}
+                        }}
+                        /> : null
+                    }
         </div>
      );
 }
