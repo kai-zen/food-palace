@@ -68,11 +68,6 @@
     }
     #d2-left-part-flex div h1 {
         font-size: 3.5rem;
-        top: 0;
-    }
-    #d2-left-part-flex p {
-        font-size: 1.4rem;
-        margin-bottom: 40px;
     }
     .categoriesElement {
         font-size: 28px;
@@ -97,18 +92,5 @@
     }
     #d2-left-part-flex p {
         font-size: 1.5rem;
-    }
-    #d2-left-part-flex a {
-        font-size: 2rem;
-        margin-top: 10px;
-    }
-    #quantity {
-        width: 70px;
-        padding-left: 20px;
-        border: 0;
-        color: #fff;
-        background-color: var(--gold);
-        font-size: 1.5rem;
-        margin-left: 10%;
     }
 }

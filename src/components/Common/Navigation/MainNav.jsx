@@ -1,27 +1,14 @@
-import React, {useState, Fragment} from 'react';
+import React, {useContext, Fragment} from 'react';
 import {Modal} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import MainContext from '../../../ContextAPI';
 
-import LoginRequest from './LoginRequest';
-import MenusModal from './MenusModal';
-import UserModal from './UserModal';
+import LoginRequest from '../Others/LoginRequest';
+import MenusModal from './../Modals/MenusModal';
+import UserModal from './../Modals/UserModal';
 
 const MainNav = () => {
-    const [showMenusModal, setShowMenusModal] = useState(false);
-    const [showUserModal, setShowUserModal] = useState(false);
-    const handleShowMenusModal = () => {
-        setShowMenusModal(!showMenusModal);
-    }
-    const handleShowUserModal = () => {
-        setShowUserModal(!showUserModal);
-    };
-    const [userInfo, setUserInfo] = useState({ persons : [
-        {
-        'age' : '35',
-        'name' : 'رضا مولایی',
-        'email' : 'rezamoalei@gmail.com'
-      }
-      ]});
+    const context = useContext(MainContext);
     return (
         <Fragment>
             <nav id="fixed-top-menu" className="fixed-top row">
@@ -30,12 +17,12 @@ const MainNav = () => {
                 <a href="#footer" className="navigation-option">تماس با ما</a>
                 <Link to="/favorites" className="navigation-option" id="login-1">علاقه مندی ها</Link>
                 <Link to="/shopping-cart" className="navigation-option" id="login-2">سبد خرید</Link>
-                <p className="navigation-option" onClick={handleShowMenusModal} style={{cursor: 'pointer'}}>منو ها</p>
+                <p className="navigation-option" onClick={context.handleShowMenusModal} style={{cursor: 'pointer'}}>منو ها</p>
                 <Modal
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                show={showMenusModal}>
-                    <MenusModal handleShowMenusModal={handleShowMenusModal}/>
+                show={context.showMenusModal}>
+                    <MenusModal handleShowMenusModal={context.handleShowMenusModal}/>
                 </Modal>
                 </div>
                 <div id="hamburger-menu">
@@ -48,12 +35,12 @@ const MainNav = () => {
                 <div id="hidden-menu">
                     <div id="hidden-menu-items">
                     <a href="/#" className="hidden-menu-item">خانه</a>
-                    <p className="hidden-menu-item" onClick={handleShowUserModal} style={{cursor: 'pointer'}}>حساب کاربری</p>
+                    <p className="hidden-menu-item" onClick={context.handleShowUserModal} style={{cursor: 'pointer'}}>حساب کاربری</p>
                     <Modal
                         aria-labelledby="contained-modal-title-vcenter"
                         centered
-                        show={showUserModal}>
-                        <UserModal handleShowUserModal={handleShowUserModal} userInfo={userInfo.persons[0]}/>
+                        show={context.showUserModal}>
+                        <UserModal handleShowUserModal={context.handleShowUserModal} userInfo={context.userInfo[0]}/>
                     </Modal>
                     <Link to="/shopping-cart" className="hidden-menu-item">سبد خرید</Link>
                     <p className="hidden-menu-item"  style={{cursor: 'pointer'}}>رزرو میز</p>
@@ -73,17 +60,10 @@ const MainNav = () => {
                     </div>
                 </div>
                 </div>
-                <div id="miniNav">
-                    <a onClick={handleShowUserModal}><i className='fas fa-user'></i></a>
-                    <Link to='/favorites'><i className='fas fa-heart'></i></Link>
-                    <span class="badge bg-secondary">0</span>
-                    <Link to='/shopping-cart'><i className='fas fa-shopping-cart'></i></Link>
-                    <span class="badge bg-secondary">0</span>
-                </div>
             </nav>
             <LoginRequest/>
         </Fragment>   
-     );
+    );
 }
  
 export default MainNav ;

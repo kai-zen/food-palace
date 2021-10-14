@@ -9,8 +9,8 @@ const UserModal = ({handleShowUserModal, userInfo}) => {
             <p className="userModalP">نام: {userInfo.name}</p>
             <p className="userModalP" id="userModalEmail">ایمیل:  {userInfo.email}</p>
             <div>
-                <Link className="btn btn-warning" to='/foods' onClick={handleShowUserModal}>سبد خرید</Link>
-                <Link className="btn btn-danger" to='/foods' onClick={handleShowUserModal}>علاقه مندی ها</Link>
+                <Link className="btn btn-warning" to='/shopping-cart' onClick={handleShowUserModal}>سبد خرید</Link>
+                <Link className="btn btn-danger" to='/favorites' onClick={handleShowUserModal}>علاقه مندی ها</Link>
             </div>
             <span onClick={handleShowUserModal} className="closeSpan"><i className='fas fa-times'></i></span>
         </div>

@@ -48,12 +48,12 @@ a:hover {
 .navigation-option {
     font-size: 1.5rem;
     color: var(--white);
-    border-bottom: 2px solid transparent;
+    transition: .5s;
 }
 
 .navigation-option:hover {
     color: var(--gold);
-    border-bottom: 2px solid var(--gold);
+    letter-spacing: 2px;
 }
 
 #hamburger-menu {
@@ -136,36 +136,6 @@ a:hover {
 
 .checkbox:checked~#hidden-menu {
     right: 0;
-}
-
-
-/* منو کوچیکه */
-
-#miniNav {
-    color: var(--gold);
-    position: fixed;
-    z-index: 1030;
-    font-size: 1.5rem;
-    margin-top: 95px;
-    text-align: right;
-    border-radius: 0 40px 40px 0;
-    transition: .5s;
-}
-
-#miniNav i {
-    margin-right: 20px;
-}
-
-#miniNav i:hover {
-    color: var(--white);
-    transform: scale(1.2);
-}
-
-#miniNav span {
-    padding: 1px 5px;
-    position: relative;
-    right: 26px;
-    bottom: 15px;
 }
 
 
@@ -277,48 +247,8 @@ a:hover {
     width: 100%;
 }
 
-#more-dots {
-    z-index: 10;
-}
-
-#more a,
-#more label {
-    font-size: 25px;
-    color: rgb(41, 40, 40);
-    background-color: rgba(245, 238, 238, 0.8);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    transition: .5s;
-}
-
 label {
     cursor: pointer;
-}
-
-.more-icons {
-    opacity: 0;
-}
-
-#hidden-check:checked~#more a:nth-child(2) {
-    right: 64px;
-    opacity: 1;
-}
-
-#hidden-check:checked~#more a:nth-child(3) {
-    right: 116px;
-    opacity: 1;
-}
-
-#hidden-check:checked~#more a:last-child {
-    right: 168px;
-    opacity: 1;
 }
 
 .carousel-caption {
@@ -447,12 +377,13 @@ label {
 #d2-left-part-flex div h1 {
     position: absolute;
     right: 5%;
-    top: 3%;
+    margin-top: 40px;
     white-space: nowrap;
     font-size: 3rem;
 }
 
 #d2-left-part-flex p {
+    margin-top: 35px;
     text-align: right;
     padding: 0 5%;
 }
@@ -465,21 +396,17 @@ label {
     padding-right: 5%;
 }
 
-#d2-left-part-flex a {
-    color: var(--gold);
-    font-size: 1.8rem;
-    margin-top: 10px;
-    margin-left: 10%;
-}
-
-#quantity {
-    width: 70px;
-    padding-left: 20px;
-    border: 0;
+#d2-left-part-flex .d2leftPartIcons {
     color: var(--white);
-    background-color: var(--gold);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 55px;
+    background-color: var(--dark);
+    border-radius: 50%;
     font-size: 1.5rem;
-    margin-left: 10%;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 
@@ -507,10 +434,6 @@ label {
     text-align: right;
     background-color: var(--white);
     border-radius: 0 0 10px 10px;
-}
-
-.cardElement:hover {
-    color: var(--gold);
 }
 
 .iconStyle {
@@ -567,8 +490,8 @@ label {
 
 #searchForm {
     position: relative;
-    width: 80%;
-    margin: 0 10%;
+    width: 60%;
+    margin: 0 20%;
     height: 90px;
     margin-bottom: 30px;
 }
@@ -658,7 +581,6 @@ footer {
 }
 
 .iconStyle:hover {
-    color: var(--gold);
     transform: scale(1.1);
 }
 
@@ -884,4 +806,25 @@ footer {
     font-size: 1.4rem;
     left: 10%;
     bottom: 3vh;
+}
+
+
+/* محاسبه قیمت */
+
+#calculater {
+    color: var(--white);
+    display: flex;
+    direction: rtl;
+    font-size: 28px;
+    width: 50%;
+    height: 60px;
+    margin: 40px 0 40px 50%;
+    padding: 5px;
+    border: 3px solid var(--gold);
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+#calculater h2 {
+    direction: ltr;
 }

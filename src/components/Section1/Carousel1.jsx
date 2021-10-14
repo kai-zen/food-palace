@@ -1,8 +1,23 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import MainContext from '../../ContextAPI';
 
 const Carousel = () => {
-    return ( 
+  const context = useContext(MainContext);
+  const handleToggleToList = context.handleToggleToList;
+
+// 18 20 11 9 6
+useEffect(() => {
+  const cartFoods = context.cartFoods;
+  cartFoods.map(cartFood => {
+    if(cartFood.id === 18 || cartFood.id === 20 || cartFood.id === 11 || cartFood.id === 9 || cartFood.id === 6){
+      document.getElementById(`cartBtn${cartFood.id}`).innerText = 'حذف از سبد';
+    }
+  });
+  window.scrollTo(0, 0);
+},[]);
+
+    return (
         <div className="row">
           {/* دکمه اسلاید قبلی و بعدی */}
           <div id="next-prev">
@@ -17,59 +32,44 @@ const Carousel = () => {
           <div className="carousel slide" data-ride="carousel" id="slider">
             <div className="carousel-inner" id="carousel-inner">
               <div className="carousel-item active">
-                <img src="images/vegeterian-pizza.jpg" className="d-block w-100" alt=""/>
+                <img src="images/Carousel1/پیتزا گیاهی.jpg" className="d-block w-100" alt=""/>
                 <div className="carousel-caption">
                   <p>پیتزای سبزیجات</p>
-                  <a href="/#" className="btn btn-warning">سفارش</a>
+                  <a className="btn btn-warning" id='cartBtn18' onClick={(event)=>handleToggleToList(event.target, '18', false, false)}>سفارش</a>
                   <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="images/Pancake.jpeg" className="d-block w-100" alt=""/>
+                <img src="images/Carousel1/پنکیک کاراملی.jpg" className="d-block w-100" alt=""/>
                 <div className="carousel-caption">
                   <p>پنکیک کاراملی</p>
-                  <a href="/#" className="btn btn-warning">سفارش</a>
+                  <a className="btn btn-warning" id='cartBtn20' onClick={(event)=>handleToggleToList(event.target, '20', false, false)}>سفارش</a>
                   <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="images/wrap.png" className="d-block w-100" alt=""/>
+                <img src="images/Carousel1/رپ مرغ.jpg" className="d-block w-100" alt=""/>
                 <div className="carousel-caption">
                   <p>رپ مرغ و سبزیجات</p>
-                  <a href="/#" className="btn btn-warning">سفارش</a>
+                  <a className="btn btn-warning" id='cartBtn11' onClick={(event)=>handleToggleToList(event.target, '11', false, false)}>سفارش</a>
                   <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="images/burger.png" className="d-block w-100 " alt=""/>
+                <img src="images/Carousel1/برگر.jpg" className="d-block w-100 " alt=""/>
                 <div className="carousel-caption">
                   <p>دوبل برگر ویژه</p>
-                  <a href="/#" className="btn btn-warning">سفارش</a>
+                  <a className="btn btn-warning" id='cartBtn9' onClick={(event)=>handleToggleToList(event.target, '9', false, false)}>سفارش</a>
                   <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="images/fish.png" className="d-block w-100" alt=""/>
+                <img src="images/Carousel1/ماهی.jpg" className="d-block w-100" alt=""/>
                 <div className="carousel-caption">
                   <p>ماهی کبابی(رژیمی)</p>
-                  <a href="/#" className="btn btn-warning">سفارش</a>
+                  <a className="btn btn-warning" id='cartBtn6' onClick={(event)=>handleToggleToList(event.target, '6', false, false)}>سفارش</a>
                   <Link to="/singleFood" className="btn btn-danger">صفحه غذا</Link>
                 </div>
-              </div>
-              <input type="checkbox" id="hidden-check" hidden />
-              <div id="more">
-                <label htmlFor="hidden-check" id="more-dots">
-                  <i className="fas fa-ellipsis-h" />
-                </label>
-                <a href="/#" className="more-icons" title="افزودن به علاقه مندی ها">
-                  <i className="fas fa-heart" />
-                </a>
-                <a href="/#" className="more-icons" title="افزودن به سبد خرید">
-                  <i className="fas fa-shopping-cart" />
-                </a>
-                <Link to="/singleFood" className="more-icons" title="اطلاعات بیشتر">
-                  <i className="fas fa-info" />
-                </Link>
               </div>
             </div>
             <div id="dots-box">

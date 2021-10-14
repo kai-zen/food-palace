@@ -1,6 +1,6 @@
 import React from 'react'
-import Cards from './Cards';
-import Categories from './../SecondSection/Categories';
+import Cards from './Common/Cards';
+import Categories from './Section2/Categories';
 
 const ThirdSection = ({foodsToShow}) => {
     const categories = ['اقتصادی ها', 'محبوب ها', 'گران ترین ها'];

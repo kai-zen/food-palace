@@ -1,16 +1,25 @@
 import React, {useEffect} from 'react';
 import Title from './Title';
-import Cards from '../ThirdSection/Cards';
+import Cards from '../Common/Cards';
+import NoResults from '../Common/Others/NoResults';
 
-const Foods = ({foodsToShow, titleOfThisMenu}) => {
-    const scrollToTop = () => {
+const Foods = ({foodsToShow, titleOfThisMenu}) => { 
+    useEffect(() => {
         window.scrollTo(0, 0);
+    }, []);
+    
+    const whatToRender = () => {
+        if (foodsToShow.length !== 0) {
+            return <Cards foodsToShow={foodsToShow}/>;
+        }else{
+            return <NoResults/>;
+        }
     }
-    useEffect(scrollToTop, []);
+
     return ( 
         <div className="container" id="foodsComponent">
             <Title titleOfThisMenu={titleOfThisMenu}/>
-            <Cards foodsToShow={foodsToShow}/>
+            {whatToRender()}   
         </div>
      );
 }

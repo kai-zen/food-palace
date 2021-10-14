@@ -1,5 +1,5 @@
 import React from 'react'
-import Carousel from './Carousel';
+import Carousel from './Carousel2';
 import Categories from './Categories';
 import FoodInfo from './FoosInfo';
 

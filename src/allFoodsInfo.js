@@ -1,146 +1,218 @@
 export const allFoodsInfo = {
     ghormeSabzi: {
+        id: '0',
         name: 'قرمه سبزی',
         price: '34000',
         category: 'sonati',
-        orderQuantity: '125'
+        orderQuantity: '125',
+        isItInFav: false,
+        isItInCart: false
     },
     gheyme: {
+        id: '1',
         name: 'قیمه',
         price: '32000',
         category: 'sonati',
-        orderQuantity: '115'
+        orderQuantity: '115',
+        isItInFav: false,
+        isItInCart: false
     },
     koobide: {
+        id: '2',
         name: 'کوبیده',
         price: '40000',
         category: 'sonati',
-        orderQuantity: '128'
+        orderQuantity: '128',
+        isItInFav: false,
+        isItInCart: false
     },
     morgheKamel: {
+        id: '3',
         name: 'مرغ کامل',
         price: '50000',
         category: 'sonati',
-        orderQuantity: '36'
+        orderQuantity: '36',
+        isItInFav: false,
+        isItInCart: false
     },
     aashReshteh: {
+        id: '4',
         name: 'آش رشته',
         price: '20000',
         category: 'sonati',
-        orderQuantity: '16'
+        orderQuantity: '16',
+        isItInFav: false,
+        isItInCart: false
     },
     dizi: {
+        id: '5',
         name: 'دیزی',
         price: '37000',
         category: 'sonati',
-        orderQuantity: '72'
+        orderQuantity: '72',
+        isItInFav: false,
+        isItInCart: false
     },
     maahi: {
+        id: '6',
         name: 'ماهی',
         price: '52000',
         category: 'sonati',
-        orderQuantity: '14'
+        orderQuantity: '14',
+        isItInFav: false,
+        isItInCart: false
     },
     joojeKabab: {
+        id: '7',
         name: 'جوجه کباب',
         price: '37000',
         category: 'sonati',
-        orderQuantity: '109'
+        orderQuantity: '109',
+        isItInFav: false,
+        isItInCart: false
     },
     pizza: {
+        id: '8',
         name: 'پیتزای گوشت',
         price: '41000',
         category: 'fastfood',
-        orderQuantity: '187'
+        orderQuantity: '187',
+        isItInFav: false,
+        isItInCart: false
     },
     hamburger: {
+        id: '9',
         name: 'همبرگر',
         price: '32000',
         category: 'fastfood',
-        orderQuantity: '217'
+        orderQuantity: '217',
+        isItInFav: false,
+        isItInCart: false
     },
     pasta: {
+        id: '10',
         name: 'پاستا آلفردو',
         price: '39000',
         category: 'fastfood',
-        orderQuantity: '66'
+        orderQuantity: '66',
+        isItInFav: false,
+        isItInCart: false
     },
     wrapeMorgh: {
+        id: '11',
         name: 'رپ مرغ',
         price: '24000',
         category: 'fastfood',
-        orderQuantity: '52'
+        orderQuantity: '52',
+        isItInFav: false,
+        isItInCart: false
     },
     steak: {
+        id: '12',
         name: 'استیک',
         price: '65000',
         category: 'fastfood',
-        orderQuantity: '40'
+        orderQuantity: '40',
+        isItInFav: false,
+        isItInCart: false
     },
     steakeMorgh: {
+        id: '13',
         name: 'استیک مرغ',
         price: '29000',
         category: 'fastfood',
-        orderQuantity: '51'
+        orderQuantity: '51',
+        isItInFav: false,
+        isItInCart: false
     },
     pirashki: {
+        id: '14',
         name: 'پیراشکی',
         price: '16000',
         category: 'fastfood',
-        orderQuantity: '90'
+        orderQuantity: '90',
+        isItInFav: false,
+        isItInCart: false
     },
     sokhari: {
+        id: '15',
         name: 'فیله سوخاری',
         price: '40000',
         category: 'fastfood',
-        orderQuantity: '89'
+        orderQuantity: '89',
+        isItInFav: false,
+        isItInCart: false
     },
     homos: {
+        id: '16',
         name: 'حمص',
         price: '18000',
         category: 'giahi',
-        orderQuantity: '22'
+        orderQuantity: '22',
+        isItInFav: false,
+        isItInCart: false
     },
     taco: {
+        id: '17',
         name: 'تاکو گیاهی',
         price: '13000',
         category: 'giahi',
-        orderQuantity: '30'
+        orderQuantity: '30',
+        isItInFav: false,
+        isItInCart: false
     },
     vegeterianPizza: {
+        id: '18',
         name: 'پیتزا سبزیجات',
         price: '27000',
         category: 'giahi',
-        orderQuantity: '44'
+        orderQuantity: '44',
+        isItInFav: false,
+        isItInCart: false
     },
     pooreSibzamini: {
+        id: '19',
         name: 'پوره سیب زمینی',
         price: '8000',
         category: 'giahi',
-        orderQuantity: '9'
+        orderQuantity: '9',
+        isItInFav: false,
+        isItInCart: false
     },
     pancake: {
+        id: '20',
         name: 'پنکیک کاراملی',
         price: '10000',
         category: 'giahi',
-        orderQuantity: '61'
+        orderQuantity: '61',
+        isItInFav: false,
+        isItInCart: false
     },
     crap: {
+        id: '21',
         name: 'کرپ توت فرنگی',
         price: '10000',
         category: 'giahi',
-        orderQuantity: '32'
+        orderQuantity: '32',
+        isItInFav: false,
+        isItInCart: false
     },
     cake: {
+        id: '22',
         name: 'کیک خامه ای',
         price: '12000',
         category: 'giahi',
-        orderQuantity: '87'
+        orderQuantity: '87',
+        isItInFav: false,
+        isItInCart: false
     },
     sweet: {
+        id: '23',
         name: 'شیرینی آلبالویی',
         price: '12000',
         category: 'giahi',
-        orderQuantity: '49'
+        orderQuantity: '49',
+        isItInFav: false,
+        isItInCart: false
     },
 }

@@ -10,10 +10,10 @@ const Carousel = () => {
                     <img className="d2-carousel-img d-block w-100" src="Images/sonati.jpg" alt="First slide"/>
                   </div>
                 </div>
-                <a className="carousel-control-prev" href="/#">
+                <a className="carousel-control-prev">
                   <i className="fas fa-angle-left" />
                 </a>
-                <a className="carousel-control-next" href="/#">
+                <a className="carousel-control-next">
                   <i className="fas fa-angle-right" />
                 </a>
               </div>
