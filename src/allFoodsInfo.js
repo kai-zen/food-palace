@@ -3,7 +3,7 @@ export const allFoodsInfo = {
         id: '0',
         name: 'قرمه سبزی',
         price: '34000',
-        category: 'sonati',
+        category: 'سنتی',
         orderQuantity: '125',
         isItInFav: false,
         isItInCart: false
@@ -12,7 +12,7 @@ export const allFoodsInfo = {
         id: '1',
         name: 'قیمه',
         price: '32000',
-        category: 'sonati',
+        category: 'سنتی',
         orderQuantity: '115',
         isItInFav: false,
         isItInCart: false
@@ -21,7 +21,7 @@ export const allFoodsInfo = {
         id: '2',
         name: 'کوبیده',
         price: '40000',
-        category: 'sonati',
+        category: 'سنتی',
         orderQuantity: '128',
         isItInFav: false,
         isItInCart: false
@@ -30,7 +30,7 @@ export const allFoodsInfo = {
         id: '3',
         name: 'مرغ کامل',
         price: '50000',
-        category: 'sonati',
+        category: 'سنتی',
         orderQuantity: '36',
         isItInFav: false,
         isItInCart: false
@@ -39,7 +39,7 @@ export const allFoodsInfo = {
         id: '4',
         name: 'آش رشته',
         price: '20000',
-        category: 'sonati',
+        category: 'سنتی',
         orderQuantity: '16',
         isItInFav: false,
         isItInCart: false
@@ -48,7 +48,7 @@ export const allFoodsInfo = {
         id: '5',
         name: 'دیزی',
         price: '37000',
-        category: 'sonati',
+        category: 'سنتی',
         orderQuantity: '72',
         isItInFav: false,
         isItInCart: false
@@ -57,7 +57,7 @@ export const allFoodsInfo = {
         id: '6',
         name: 'ماهی',
         price: '52000',
-        category: 'sonati',
+        category: 'سنتی',
         orderQuantity: '14',
         isItInFav: false,
         isItInCart: false
@@ -66,7 +66,7 @@ export const allFoodsInfo = {
         id: '7',
         name: 'جوجه کباب',
         price: '37000',
-        category: 'sonati',
+        category: 'سنتی',
         orderQuantity: '109',
         isItInFav: false,
         isItInCart: false
@@ -75,7 +75,7 @@ export const allFoodsInfo = {
         id: '8',
         name: 'پیتزای گوشت',
         price: '41000',
-        category: 'fastfood',
+        category: 'فست فود',
         orderQuantity: '187',
         isItInFav: false,
         isItInCart: false
@@ -84,7 +84,7 @@ export const allFoodsInfo = {
         id: '9',
         name: 'همبرگر',
         price: '32000',
-        category: 'fastfood',
+        category: 'فست فود',
         orderQuantity: '217',
         isItInFav: false,
         isItInCart: false
@@ -93,7 +93,7 @@ export const allFoodsInfo = {
         id: '10',
         name: 'پاستا آلفردو',
         price: '39000',
-        category: 'fastfood',
+        category: 'فست فود',
         orderQuantity: '66',
         isItInFav: false,
         isItInCart: false
@@ -102,7 +102,7 @@ export const allFoodsInfo = {
         id: '11',
         name: 'رپ مرغ',
         price: '24000',
-        category: 'fastfood',
+        category: 'فست فود',
         orderQuantity: '52',
         isItInFav: false,
         isItInCart: false
@@ -111,7 +111,7 @@ export const allFoodsInfo = {
         id: '12',
         name: 'استیک',
         price: '65000',
-        category: 'fastfood',
+        category: 'فست فود',
         orderQuantity: '40',
         isItInFav: false,
         isItInCart: false
@@ -120,7 +120,7 @@ export const allFoodsInfo = {
         id: '13',
         name: 'استیک مرغ',
         price: '29000',
-        category: 'fastfood',
+        category: 'فست فود',
         orderQuantity: '51',
         isItInFav: false,
         isItInCart: false
@@ -129,7 +129,7 @@ export const allFoodsInfo = {
         id: '14',
         name: 'پیراشکی',
         price: '16000',
-        category: 'fastfood',
+        category: 'فست فود',
         orderQuantity: '90',
         isItInFav: false,
         isItInCart: false
@@ -138,7 +138,7 @@ export const allFoodsInfo = {
         id: '15',
         name: 'فیله سوخاری',
         price: '40000',
-        category: 'fastfood',
+        category: 'فست فود',
         orderQuantity: '89',
         isItInFav: false,
         isItInCart: false
@@ -147,7 +147,7 @@ export const allFoodsInfo = {
         id: '16',
         name: 'حمص',
         price: '18000',
-        category: 'giahi',
+        category: 'گیاهی',
         orderQuantity: '22',
         isItInFav: false,
         isItInCart: false
@@ -156,16 +156,16 @@ export const allFoodsInfo = {
         id: '17',
         name: 'تاکو گیاهی',
         price: '13000',
-        category: 'giahi',
+        category: 'گیاهی',
         orderQuantity: '30',
         isItInFav: false,
         isItInCart: false
     },
     vegeterianPizza: {
         id: '18',
-        name: 'پیتزا سبزیجات',
+        name: 'پیتزای سبزیجات',
         price: '27000',
-        category: 'giahi',
+        category: 'گیاهی',
         orderQuantity: '44',
         isItInFav: false,
         isItInCart: false
@@ -174,7 +174,7 @@ export const allFoodsInfo = {
         id: '19',
         name: 'پوره سیب زمینی',
         price: '8000',
-        category: 'giahi',
+        category: 'گیاهی',
         orderQuantity: '9',
         isItInFav: false,
         isItInCart: false
@@ -183,7 +183,7 @@ export const allFoodsInfo = {
         id: '20',
         name: 'پنکیک کاراملی',
         price: '10000',
-        category: 'giahi',
+        category: 'گیاهی',
         orderQuantity: '61',
         isItInFav: false,
         isItInCart: false
@@ -192,7 +192,7 @@ export const allFoodsInfo = {
         id: '21',
         name: 'کرپ توت فرنگی',
         price: '10000',
-        category: 'giahi',
+        category: 'گیاهی',
         orderQuantity: '32',
         isItInFav: false,
         isItInCart: false
@@ -201,7 +201,7 @@ export const allFoodsInfo = {
         id: '22',
         name: 'کیک خامه ای',
         price: '12000',
-        category: 'giahi',
+        category: 'گیاهی',
         orderQuantity: '87',
         isItInFav: false,
         isItInCart: false
@@ -210,7 +210,7 @@ export const allFoodsInfo = {
         id: '23',
         name: 'شیرینی آلبالویی',
         price: '12000',
-        category: 'giahi',
+        category: 'گیاهی',
         orderQuantity: '49',
         isItInFav: false,
         isItInCart: false

@@ -10,6 +10,10 @@ body {
     font-family: 'Markazi Text', serif;
 }
 
+a {
+    cursor: pointer;
+}
+
 a:hover {
     text-decoration: none;
     color: var(--white);
@@ -523,6 +527,7 @@ label {
 }
 
 .d4SearchResult {
+    cursor: pointer;
     display: flex;
     width: 70%;
     font-size: 30px;

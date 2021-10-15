@@ -1,29 +1,35 @@
-import React, {Fragment} from 'react';
-import { withRouter } from 'react-router';
+import React, {Fragment, useState, useContext} from 'react';
+import { Redirect } from 'react-router';
+import MainContext from '../../ContextAPI';
 
-const SearchResults = ({history}) => {
-    const redirectToSingleFood = () => {
-        history.push("/singleFood");
-    }
+const SearchResults = ({filteredFoods}) => {
+    const context = useContext(MainContext);
+    const allFoods = context.allFoods;
+
+    const [clickedFoodId,setClickedFoodId] = useState();
+    const [goToSingleFood, setGoToSingleFood] = useState(false);
+    const redirectToSingleFood = (id) => {        
+        setGoToSingleFood(true);
+        setClickedFoodId(id);
+    };
     return (
         <Fragment>
-            <div className='d4SearchResult'  onClick={redirectToSingleFood}>
-                <img src="/Images/giahi/حمص.jpg" alt=""/>
-                <h2 className="card-title">فست فود / چیز برگر</h2>
-                <button className='btn'>بیشتر...</button>
-            </div>
-            <div className='d4SearchResult'  onClick={redirectToSingleFood}>
-                <img src="/Images/giahi/حمص.jpg" alt=""/>
-                <h2 className="card-title">فست فود / چیز برگر</h2>
-                <button className='btn'>بیشتر...</button>
-            </div>
-            <div className='d4SearchResult'  onClick={redirectToSingleFood}>
-                <img src="/Images/giahi/حمص.jpg" alt=""/>
-                <h2 className="card-title">فست فود / چیز برگر</h2>
-                <button className='btn'>بیشتر...</button>
-            </div>
+            {filteredFoods.map(filteredFood => (
+                <div className='d4SearchResult' onClick={() => redirectToSingleFood(filteredFood.id)}>
+                    <img src={`Images/${filteredFood.category}/${filteredFood.name}.jpg`} alt=""/>
+                    <h2 className="card-title">{`${filteredFood.category} / ${filteredFood.name}`}</h2>
+                    <button className='btn'>بیشتر...</button>
+                </div>  
+            ))}
+            {goToSingleFood ? <Redirect
+                        to={{
+                            pathname: `/singleFood/${allFoods[clickedFoodId].id}`,
+                            state: {key: allFoods[clickedFoodId].id}
+                        }}
+                        /> : null
+                    }        
         </Fragment>
      );
 }
  
-export default withRouter(SearchResults);
+export default SearchResults;
