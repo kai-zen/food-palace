@@ -5,7 +5,7 @@ import Footer from './components/Common/Footer';
 import MainNav from './components/Common/Navigation/MainNav';
 import FloatingMenu from './components/Common/Navigation/FloatingMenu';
 import FirstSection from './components/Section1/FirstSection';
-import SecondSection from './components/Section2/SecondSection';
+import SecondSection from './components/SecondSection';
 import ThirdSection from './components/Section3';
 import FourthSection from './components/Section4/FourthSection';
 import Wave from './components/Common/Others/Wave';

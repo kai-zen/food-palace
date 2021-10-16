@@ -339,8 +339,9 @@ label {
 #div2 {
     clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
     padding-top: 35px;
-    padding-bottom: 12%;
+    padding-bottom: 18%;
     background-color: var(--white);
+    position: relative;
 }
 
 #d2-carousel {
@@ -355,15 +356,8 @@ label {
     box-shadow: 5px 5px 23px -3px #000000;
 }
 
-#div2 .carousel-control-prev,
-#div2 .carousel-control-next {
-    color: var(--gold);
-    font-size: 3rem;
-    height: 33.3333%;
-    top: 33.3333%;
-}
-
 #d2-left-part-flex {
+    margin-top: 60px;
     position: relative;
     width: 100%;
     display: flex;
@@ -387,7 +381,7 @@ label {
 }
 
 #d2-left-part-flex p {
-    margin-top: 35px;
+    margin-top: 55px;
     text-align: right;
     padding: 0 5%;
 }
@@ -411,6 +405,11 @@ label {
     font-size: 1.5rem;
     margin-left: 20px;
     cursor: pointer;
+    transition: .5s;
+}
+
+#d2-left-part-flex .d2leftPartIcons:hover {
+    background-color: var(--gold);
 }
 
 

@@ -33,7 +33,7 @@ const Cards = ({foodsToShow}) => {
     return ( 
         <div className="row">
             {foodsToShow.map(foodToShow =>(
-                <div className="card offset-1 col-10 offset-sm-0 col-sm-6 col-md-4 col-lg-3">
+                <div className="card offset-2 col-8 offset-sm-0 col-sm-6 col-md-4 col-lg-3">
                     <img className="card-img-top cardImage" name={foodToShow.id}
                     src={`Images/${foodToShow.category}/${foodToShow.name}.jpg`} alt=""
                     onClick={redirectToSingleFood}/>
@@ -45,8 +45,7 @@ const Cards = ({foodsToShow}) => {
                             <span className="fas fa-heart" id={`heartIcon${foodToShow.id}`} onClick={(event)=>{
                                 handleToggleToList(event.target, foodToShow.id, true, true)
                             }}/>
-                        </p>
-                        
+                        </p>                       
                         <p className="iconStyle d3IconStyle" >
                             <span className="fas fa-shopping-cart" id={`cartIcon${foodToShow.id}`} onClick={(event)=>{
                                 handleToggleToList(event.target, foodToShow.id, false, true)

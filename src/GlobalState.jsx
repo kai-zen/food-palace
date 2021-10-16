@@ -32,9 +32,9 @@ const GlobalState = (props) => {
       ]);
 
       // غذاهای هر منو
-      const sonatiFoods = [...allFoods.filter(eachFood => eachFood.category==='sonati')];
-      const fastfoods = [...allFoods.filter(eachFood => eachFood.category==='fastfood')];
-      const giahiFoods = [...allFoods.filter(eachFood => eachFood.category==='giahi')];
+      const sonatiFoods = [...allFoods.filter(eachFood => eachFood.category==='سنتی')];
+      const fastfoods = [...allFoods.filter(eachFood => eachFood.category==='فست فود')];
+      const giahiFoods = [...allFoods.filter(eachFood => eachFood.category==='گیاهی')];
 
       // غذاهای مورد علاقه و سبد
       const [favoriteFoods, setFavoriteFoods] = useState([]);

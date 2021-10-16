@@ -13,10 +13,9 @@
         width: 17.5px;
         height: 17.5px;
     }
-    #div2 {
-        padding-bottom: 5%;
-    }
-    #d2-menus {
-        justify-content: space-around;
+    #imagesPart {
+        width: 300px;
+        height: 300px;
+        margin-top: 30px;
     }
 }
