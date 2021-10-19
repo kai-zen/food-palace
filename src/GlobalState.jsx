@@ -31,6 +31,17 @@ const GlobalState = (props) => {
         allFoodsInfo.sweet,
       ]);
 
+    //اطلاعات کاربر
+      const [users, setUsers] = useState([
+        {
+        'id': 1,
+        'name' : 'علی رضی پور',
+        'email' : 'alirazipur2001@gmail.com',
+        'password': '123456',
+        'isAdmin': true,
+        }
+      ]);
+
       // غذاهای هر منو
       const sonatiFoods = [...allFoods.filter(eachFood => eachFood.category==='سنتی')];
       const fastfoods = [...allFoods.filter(eachFood => eachFood.category==='فست فود')];
@@ -104,14 +115,42 @@ const GlobalState = (props) => {
       const handleShowUserModal = () => {
         setShowUserModal(!showUserModal);
       };
-      //اطلاعات کاربر
-      const [userInfo, setUserInfo] = useState([
-        {
-        'age' : '35',
-        'name' : 'رضا مولایی',
-        'email' : 'rezamoalei@gmail.com'
+
+
+      // متود مدیریت ثبت نام
+      const handleSignUp = (name, email, pass) => {        
+          let currentUsers = [...users];
+          let itsNotUnique = currentUsers.filter(currentUser => currentUser.email === email);
+          if(itsNotUnique.length > 0){
+            alert('ایمیل قبلا در سیستم ثبت شده');
+            return;
+          }
+          let iteration = currentUsers.length;
+          let userId = users[--iteration].id
+          let user = {
+              'id': ++userId,
+              'name': name,
+              'email': email,
+              'password': pass,
+              'isAdmin': false,
+          };
+          currentUsers.push(user);
+          setUsers(currentUsers);
+          alert('ثبت نام شما با موفقیت انجام شد');
+          console.log(currentUsers);
+      }
+
+      // متود ورود
+      const handleLogin = (email, pass) => {
+        let currentUsers = [...users];
+        let emailIsOkay = currentUsers.filter(currentUser => currentUser.email === email);
+        let passIsOkay = emailIsOkay[0].password === pass;
+        if(emailIsOkay.length > 0 && passIsOkay){
+          alert(`خوش آمدید ${emailIsOkay[0].name}`);
+        }else{
+          alert('اطلاعات وارد شده صحیح نمیباشد')
         }
-      ]);
+      }
       //کامپوننت محاسبه قیمت
       const handleCalculater = () => {
         let currentCartFoods = [...cartFoods];
@@ -139,7 +178,9 @@ const GlobalState = (props) => {
             showUserModal: showUserModal,
             handleShowMenusModal: handleShowMenusModal,
             handleShowUserModal: handleShowUserModal,
-            userInfo: userInfo,
+            users: users,
+            handleSignUp: handleSignUp,
+            handleLogin: handleLogin,
             handleCalculater: handleCalculater
         }}>
             {props.children}

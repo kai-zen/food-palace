@@ -13,6 +13,7 @@ const MainContext = createContext({
     showUserModal: false,
     handleShowMenusModal: () => {},
     handleShowUserModal: () => {},
+    handleSignUp: () => {},
     userInfo: []
 });
 

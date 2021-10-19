@@ -1,6 +1,32 @@
-import React from 'react'
+import React, {useRef, useState} from 'react'
+import SimpleReactValidator from 'simple-react-validator';
 
 const Footer  = () => {
+
+  const validator = useRef(new SimpleReactValidator({
+    messages: {
+      required: 'پر کردن این فیلد الزامیست',
+      email: 'لطفا ایمیل معتبر وارد کنید'
+    },
+    element: message => <div style={{
+      color: 'red'
+    }}>{message}</div>
+  }));
+
+  const [userName , setUserName] = useState('');
+  const [email , setEmail] = useState('');
+  const [, forceUpdate] = useState();
+
+  const handleSubmit = () => {
+    if(validator.current.allValid()){
+      alert('اطلاعات شما با موفقیت ثبت شد');
+    }else{
+      validator.current.showMessages();forceUpdate(1);
+    }
+  }
+
+  
+
     return ( 
     <footer id='footer'>
     <div className="container">
@@ -39,13 +65,34 @@ const Footer  = () => {
           <h1>خبرنامه</h1>
           <div id="footer-form-username">
             <p>نام دلخواه *</p>
-            <input type="text" required className="form-control" />
+            <input type="text"
+            required
+            className="form-control"
+            name='footer-username'
+            value={userName}
+            onChange={e=>{
+              setUserName(e.target.value);
+              validator.current.showMessageFor('footer-username');
+            }}
+            />
+            {validator.current.message('footer-username', userName, 'required')}
           </div>
           <div id="footer-form-email">
             <p>ایمیل *</p>
-            <input type="email" required className="form-control" />
+            <input 
+            type="email" 
+            required 
+            className="form-control" 
+            name='footer-email'
+            value={email}
+            onChange={e=>{
+              setEmail(e.target.value);
+              validator.current.showMessageFor('footer-email');
+            }}
+            />
+            {validator.current.message('footer-email', email, 'required|email')}
           </div>
-          <button type="submit" className="btn btn-secondary">ثبت ایمیل</button>
+          <button type="submit" onClick={handleSubmit} className="btn btn-secondary">ثبت ایمیل</button>
         </div>
         {/* بخش کپی رایت */}
         <div id="copyright" className="col-12">

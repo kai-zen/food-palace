@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useState} from 'react'
 import SearchResults from './SearchResults';
 import MainContext from './../../ContextAPI';
 import NoResults from '../Common/Others/NoResults';

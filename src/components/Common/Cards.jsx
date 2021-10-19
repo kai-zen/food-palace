@@ -8,11 +8,11 @@ const Cards = ({foodsToShow}) => {
     const cartFoods = context.cartFoods;
     const favoriteFoods = context.favoriteFoods;
     
-    const [clickedFoodIndex,setClickedFoodIndex] = useState();
+    const [clickedFoodId,setClickedFoodId] = useState();
     const [goToSingleFood, setGoToSingleFood] = useState(false);
     const redirectToSingleFood = (event) => {        
         setGoToSingleFood(true);
-        setClickedFoodIndex(event.target.name);
+        setClickedFoodId(event.target.name);
     };
 
     useEffect(()=>{
@@ -58,8 +58,8 @@ const Cards = ({foodsToShow}) => {
                     </div>
                     {goToSingleFood ? <Redirect
                         to={{
-                            pathname: `/singleFood/${foodsToShow[clickedFoodIndex].id}`,
-                            state: {key: foodsToShow[clickedFoodIndex].id}
+                            pathname: `/singleFood/${clickedFoodId}`,
+                            state: {key: clickedFoodId}
                         }}
                         /> : null
                     }

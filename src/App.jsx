@@ -11,7 +11,7 @@ import FourthSection from './components/Section4/FourthSection';
 import Wave from './components/Common/Others/Wave';
 import Foods from './components/FoodsComponent/Foods';
 import SingleFood from './components/SingleFoodComponent';
-import Login from './components/LoginComponent/LoginComponent';
+import LoginComponent from './components/LoginComponent/LoginComponent';
 import MainContext from './ContextAPI';
 import Cart from './components/Cart';
 
@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/giahi-foods" render={()=><Foods foodsToShow={context.giahiFoods} titleOfThisMenu='غذاهای گیاهی' />}/>
         <Route path="/favorites" render={()=><Foods foodsToShow={context.favoriteFoods} titleOfThisMenu='مورد علاقه ها' />}/>
         <Route path="/shopping-cart" component={Cart} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" component={LoginComponent} />
         <Route path="/" exact>
           <FirstSection/>
           <SecondSection/>

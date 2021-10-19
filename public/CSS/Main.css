@@ -55,7 +55,8 @@ a:hover {
     transition: .5s;
 }
 
-.navigation-option:hover {
+.navigation-option:hover,
+.navigation-option.active {
     color: var(--gold);
     letter-spacing: 2px;
 }
@@ -321,11 +322,14 @@ label {
 }
 
 .categoriesElement label {
-    pointer-events: none;
     border: 2px solid var(--gold);
     border-radius: 5px;
     padding: 8px;
     color: var(--gold);
+}
+
+.categoriesElement .label {
+    pointer-events: none;
 }
 
 .catRadio:checked+label {
@@ -423,10 +427,17 @@ label {
     background-color: var(--dark);
     border: 0;
     margin-bottom: 25px;
+    transition: .5s;
+}
+
+.card:hover {
+    transform: scale(1.08);
 }
 
 .cardImage {
     border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    transition: .5s;
 }
 
 .cardImage:hover {
@@ -847,4 +858,12 @@ footer {
 
 #calculater h2 {
     direction: ltr;
+}
+
+#noResults {
+    transition: .5s;
+}
+
+#noResults:hover {
+    transform: translate(-15px);
 }

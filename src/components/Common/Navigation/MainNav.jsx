@@ -1,6 +1,6 @@
 import React, {useContext, Fragment} from 'react';
 import {Modal} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import MainContext from '../../../ContextAPI';
 
 import LoginRequest from '../Others/LoginRequest';
@@ -12,11 +12,11 @@ const MainNav = () => {
     return (
         <Fragment>
             <nav id="fixed-top-menu" className="fixed-top row">
-                <Link to="/" id="logo"><i className="fa fa-utensils" /> Food Palace</Link>
+                <NavLink to="/" id="logo"><i className="fa fa-utensils" /> Food Palace</NavLink>
                 <div id="navigation-options" className="offset-1 col-7 d-none d-lg-flex justify-content-around">
                 <a href="#footer" className="navigation-option">تماس با ما</a>
-                <Link to="/favorites" className="navigation-option" id="login-1">علاقه مندی ها</Link>
-                <Link to="/shopping-cart" className="navigation-option" id="login-2">سبد خرید</Link>
+                <NavLink to="/favorites" className="navigation-option" id="login-1">علاقه مندی ها</NavLink>
+                <NavLink to="/shopping-cart" className="navigation-option" id="login-2">سبد خرید</NavLink>
                 <p className="navigation-option" onClick={context.handleShowMenusModal} style={{cursor: 'pointer'}}>منو ها</p>
                 <Modal
                 aria-labelledby="contained-modal-title-vcenter"
@@ -24,6 +24,7 @@ const MainNav = () => {
                 show={context.showMenusModal}>
                     <MenusModal handleShowMenusModal={context.handleShowMenusModal}/>
                 </Modal>
+                <NavLink to="/" exact className="navigation-option" id="login-1">خانه</NavLink>
                 </div>
                 <div id="hamburger-menu">
                 <input type="checkbox" id="hidden-checkbox" className="checkbox" hidden />
@@ -40,7 +41,7 @@ const MainNav = () => {
                         aria-labelledby="contained-modal-title-vcenter"
                         centered
                         show={context.showUserModal}>
-                        <UserModal handleShowUserModal={context.handleShowUserModal} userInfo={context.userInfo[0]}/>
+                        <UserModal handleShowUserModal={context.handleShowUserModal} userInfo={context.users[0]}/>
                     </Modal>
                     <Link to="/shopping-cart" className="hidden-menu-item">سبد خرید</Link>
                     <p className="hidden-menu-item"  style={{cursor: 'pointer'}}>رزرو میز</p>

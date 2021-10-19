@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 const UserModal = ({handleShowUserModal, userInfo}) => {
     return (
         <div id="userModal">
-            <img src="Images/user.jpg" alt="" className='rounded-circle'/>
-            <p className="userModalP">سن: {userInfo.age}</p>
+            <img src="Images/user.jpg" alt="" className='rounded-circle' style={{
+                border: '2px solid black'
+            }}/>
             <p className="userModalP">نام: {userInfo.name}</p>
             <p className="userModalP" id="userModalEmail">ایمیل:  {userInfo.email}</p>
             <div>
