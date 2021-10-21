@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { orderBy } from 'lodash';
-import Cards from './Common/Cards';
+import Cards from './../components/FoodsComponent/Cards';
 
 const ThirdSection = ({foodsToShow}) => {
     const categories = ['اقتصادی ها', 'محبوب ها', 'گران ترین ها'];

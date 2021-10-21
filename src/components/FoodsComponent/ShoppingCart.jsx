@@ -1,8 +1,6 @@
 import React, {useContext} from 'react';
-import MainContext from './../ContextAPI';
-import Foods from './FoodsComponent/Foods';
-
-
+import MainContext from '../../structure/contexts/mainContext';
+import Foods from './Foods';
 
 const Cart = () => {
     const {cartFoods, handleCalculater} = useContext(MainContext);

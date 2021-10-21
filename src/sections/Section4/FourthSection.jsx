@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react'
 import SearchResults from './SearchResults';
-import MainContext from './../../ContextAPI';
-import NoResults from '../Common/Others/NoResults';
+import MainContext from '../../structure/contexts/mainContext';
+import NoResults from '../../others/NoResults';
 
 const FourthSection = () => {
     const {allFoods} = useContext(MainContext);
@@ -12,7 +12,6 @@ const FourthSection = () => {
         const notFilteredFoods = [...allFoods];        
         let afterFilterFoods = notFilteredFoods.filter(notFilteredFood => notFilteredFood.name.includes(searchWord));
         setFilteredFoods(afterFilterFoods);
-        console.log(filteredFoods);
     }
 
     const whatToRender = () => {
@@ -23,7 +22,6 @@ const FourthSection = () => {
         }
     }
 
-    console.log(filteredFoods);
     return ( 
     <div id="div4">
         <div className="container">

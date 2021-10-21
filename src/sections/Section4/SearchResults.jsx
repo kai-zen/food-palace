@@ -1,6 +1,6 @@
 import React, {Fragment, useState, useContext} from 'react';
 import { Redirect } from 'react-router';
-import MainContext from '../../ContextAPI';
+import MainContext from '../../structure/contexts/mainContext';
 
 const SearchResults = ({filteredFoods}) => {
     const context = useContext(MainContext);

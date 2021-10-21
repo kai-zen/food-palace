@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import MainContext from './ContextAPI';
+import MainContext from './contexts/mainContext';
 import { allFoodsInfo } from './allFoodsInfo';
 
-const GlobalState = (props) => {
+const GlobalState = props => {
     // همه غذاها
     const [allFoods, setAllFoods] = useState([
         allFoodsInfo.ghormeSabzi,
@@ -29,17 +29,6 @@ const GlobalState = (props) => {
         allFoodsInfo.crap,
         allFoodsInfo.cake,
         allFoodsInfo.sweet,
-      ]);
-
-    //اطلاعات کاربر
-      const [users, setUsers] = useState([
-        {
-        'id': 1,
-        'name' : 'علی رضی پور',
-        'email' : 'alirazipur2001@gmail.com',
-        'password': '123456',
-        'isAdmin': true,
-        }
       ]);
 
       // غذاهای هر منو
@@ -105,52 +94,8 @@ const GlobalState = (props) => {
           allFoods[foodIndex].isItInCart ? handleRemoveFromList(element, foodIndex, false, isIcon):handleAddToList(element, foodIndex, false, isIcon)
         }   
       }
-      //مدیریت نمایش پاپ آپ
-      const [showMenusModal, setShowMenusModal] = useState(false);
-      const [showUserModal, setShowUserModal] = useState(false);
+      
 
-      const handleShowMenusModal = () => {
-        setShowMenusModal(!showMenusModal);
-      }
-      const handleShowUserModal = () => {
-        setShowUserModal(!showUserModal);
-      };
-
-
-      // متود مدیریت ثبت نام
-      const handleSignUp = (name, email, pass) => {        
-          let currentUsers = [...users];
-          let itsNotUnique = currentUsers.filter(currentUser => currentUser.email === email);
-          if(itsNotUnique.length > 0){
-            alert('ایمیل قبلا در سیستم ثبت شده');
-            return;
-          }
-          let iteration = currentUsers.length;
-          let userId = users[--iteration].id
-          let user = {
-              'id': ++userId,
-              'name': name,
-              'email': email,
-              'password': pass,
-              'isAdmin': false,
-          };
-          currentUsers.push(user);
-          setUsers(currentUsers);
-          alert('ثبت نام شما با موفقیت انجام شد');
-          console.log(currentUsers);
-      }
-
-      // متود ورود
-      const handleLogin = (email, pass) => {
-        let currentUsers = [...users];
-        let emailIsOkay = currentUsers.filter(currentUser => currentUser.email === email);
-        let passIsOkay = emailIsOkay[0].password === pass;
-        if(emailIsOkay.length > 0 && passIsOkay){
-          alert(`خوش آمدید ${emailIsOkay[0].name}`);
-        }else{
-          alert('اطلاعات وارد شده صحیح نمیباشد')
-        }
-      }
       //کامپوننت محاسبه قیمت
       const handleCalculater = () => {
         let currentCartFoods = [...cartFoods];
@@ -174,14 +119,7 @@ const GlobalState = (props) => {
             favoriteFoods: favoriteFoods,
             cartFoods: cartFoods,
             handleToggleToList: handleToggleToList,
-            showMenusModal: showMenusModal,
-            showUserModal: showUserModal,
-            handleShowMenusModal: handleShowMenusModal,
-            handleShowUserModal: handleShowUserModal,
-            users: users,
-            handleSignUp: handleSignUp,
-            handleLogin: handleLogin,
-            handleCalculater: handleCalculater
+            handleCalculater: handleCalculater,
         }}>
             {props.children}
         </MainContext.Provider>

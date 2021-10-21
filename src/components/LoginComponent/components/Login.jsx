@@ -1,11 +1,12 @@
 import React, {useState, useRef, useContext} from 'react';
 import SimpleReactValidator from 'simple-react-validator';
-import MainContext from './../../ContextAPI';
+import { ToastContainer } from 'react-toastify';
+import { Redirect } from 'react-router';
+import LoginContext from './../../../structure/contexts/loginContext';
 
 const Login = () => {
-    const context = useContext(MainContext);
-    const handleLogin = context.handleLogin;
-
+    const loginContext = useContext(LoginContext)
+    const handleLogin = loginContext.handleLogin;
     const validator = useRef(new SimpleReactValidator({
         messages: {
           required: 'پر کردن این فیلد الزامیست',
@@ -76,6 +77,8 @@ const Login = () => {
             <div className="foot-lnk">
                 <a href="#wholeFormContainer">خوش آمدید</a>
             </div>
+            {loginContext.redirectToHome ? <Redirect to='/' exact /> : null}
+            <ToastContainer/>
         </div>
     );
 }

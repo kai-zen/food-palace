@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { Redirect } from 'react-router';
-import MainContext from '../../ContextAPI';
+import MainContext from '../../structure/contexts/mainContext';
 
 const Carousel = () => {
   const context = useContext(MainContext);
@@ -17,7 +17,6 @@ const Carousel = () => {
     useEffect(() => {
       const cartFoods = context.cartFoods;
       cartFoods.map(cartFood => {
-        console.log(cartFood);
         if(cartFood.id === '18' || cartFood.id === '20' || cartFood.id === '11' || cartFood.id === '9' || cartFood.id === '6'){
           document.getElementById(`cartBtn${cartFood.id}`).innerText = 'حذف از سبد';
         }

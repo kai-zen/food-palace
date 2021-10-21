@@ -11,7 +11,7 @@ export const allFoodsInfo = {
     gheyme: {
         id: '1',
         name: 'قیمه',
-        price: '32000',
+        price: 32000,
         category: 'سنتی',
         orderQuantity: 115,
         isItInFav: false,
@@ -20,7 +20,7 @@ export const allFoodsInfo = {
     koobide: {
         id: '2',
         name: 'کوبیده',
-        price: '40000',
+        price: 40000,
         category: 'سنتی',
         orderQuantity: 128,
         isItInFav: false,
@@ -29,7 +29,7 @@ export const allFoodsInfo = {
     morgheKamel: {
         id: '3',
         name: 'مرغ کامل',
-        price: '50000',
+        price: 70000,
         category: 'سنتی',
         orderQuantity: 36,
         isItInFav: false,
@@ -47,7 +47,7 @@ export const allFoodsInfo = {
     dizi: {
         id: '5',
         name: 'دیزی',
-        price: 37000,
+        price: 45000,
         category: 'سنتی',
         orderQuantity: 72,
         isItInFav: false,
@@ -56,7 +56,7 @@ export const allFoodsInfo = {
     maahi: {
         id: '6',
         name: 'ماهی',
-        price: 52000,
+        price: 90000,
         category: 'سنتی',
         orderQuantity: 14,
         isItInFav: false,
@@ -74,7 +74,7 @@ export const allFoodsInfo = {
     pizza: {
         id: '8',
         name: 'پیتزای گوشت',
-        price: 41000,
+        price: 57000,
         category: 'فست فود',
         orderQuantity: 187,
         isItInFav: false,
@@ -83,7 +83,7 @@ export const allFoodsInfo = {
     hamburger: {
         id: '9',
         name: 'همبرگر',
-        price: 32000,
+        price: 38000,
         category: 'فست فود',
         orderQuantity: 217,
         isItInFav: false,
@@ -92,7 +92,7 @@ export const allFoodsInfo = {
     pasta: {
         id: '10',
         name: 'پاستا آلفردو',
-        price: 39000,
+        price: 42000,
         category: 'فست فود',
         orderQuantity: 66,
         isItInFav: false,
@@ -110,7 +110,7 @@ export const allFoodsInfo = {
     steak: {
         id: '12',
         name: 'استیک',
-        price: 65000,
+        price: 99000,
         category: 'فست فود',
         orderQuantity: 40,
         isItInFav: false,
@@ -119,7 +119,7 @@ export const allFoodsInfo = {
     steakeMorgh: {
         id: '13',
         name: 'استیک مرغ',
-        price: 29000,
+        price: 45000,
         category: 'فست فود',
         orderQuantity: 51,
         isItInFav: false,
@@ -128,7 +128,7 @@ export const allFoodsInfo = {
     pirashki: {
         id: '14',
         name: 'پیراشکی',
-        price: 16000,
+        price: 22000,
         category: 'فست فود',
         orderQuantity: 90,
         isItInFav: false,
@@ -137,7 +137,7 @@ export const allFoodsInfo = {
     sokhari: {
         id: '15',
         name: 'فیله سوخاری',
-        price: 40000,
+        price: 70000,
         category: 'فست فود',
         orderQuantity: 89,
         isItInFav: false,
@@ -155,7 +155,7 @@ export const allFoodsInfo = {
     taco: {
         id: '17',
         name: 'تاکو گیاهی',
-        price: 13000,
+        price: 16000,
         category: 'گیاهی',
         orderQuantity: 30,
         isItInFav: false,
@@ -164,7 +164,7 @@ export const allFoodsInfo = {
     vegeterianPizza: {
         id: '18',
         name: 'پیتزای سبزیجات',
-        price: 27000,
+        price: 45000,
         category: 'گیاهی',
         orderQuantity: 44,
         isItInFav: false,
@@ -182,7 +182,7 @@ export const allFoodsInfo = {
     pancake: {
         id: '20',
         name: 'پنکیک کاراملی',
-        price: 10000,
+        price: 19000,
         category: 'گیاهی',
         orderQuantity: 61,
         isItInFav: false,
@@ -191,7 +191,7 @@ export const allFoodsInfo = {
     crap: {
         id: '21',
         name: 'کرپ توت فرنگی',
-        price: 10000,
+        price: 23000,
         category: 'گیاهی',
         orderQuantity: 32,
         isItInFav: false,

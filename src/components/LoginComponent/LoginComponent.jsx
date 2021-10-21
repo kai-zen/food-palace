@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import Login from './Login';
-import Register from './Register';
+import Login from './components/Login';
+import Register from './components/Register';
 
 const LoginComponent = () => {
 
@@ -8,6 +8,9 @@ const LoginComponent = () => {
         document.getElementById('loginRequest').style.display = 'none';
     }
     useEffect(closeLoginRequset, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return ( 
     <div id="wholeFormContainer">

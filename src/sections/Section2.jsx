@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react';
-import MainContext from '../ContextAPI';
+import MainContext from '../structure/contexts/mainContext';
 
 const SecondSection = () => {
     const {favoriteFoods, cartFoods, handleToggleToList} = useContext(MainContext);

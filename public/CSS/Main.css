@@ -430,10 +430,6 @@ label {
     transition: .5s;
 }
 
-.card:hover {
-    transform: scale(1.08);
-}
-
 .cardImage {
     border-radius: 10px 10px 0 0;
     overflow: hidden;

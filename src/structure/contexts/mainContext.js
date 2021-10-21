@@ -9,12 +9,6 @@ const MainContext = createContext({
     cartFoods: [],
     handleToggleToList: () => {},
     handleCalculater: () => {},
-    showMenusModal: false,
-    showUserModal: false,
-    handleShowMenusModal: () => {},
-    handleShowUserModal: () => {},
-    handleSignUp: () => {},
-    userInfo: []
 });
 
 export default MainContext;

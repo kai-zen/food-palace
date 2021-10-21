@@ -1,12 +1,9 @@
 import React, {useState, useContext, useEffect} from 'react';
 import { Redirect } from 'react-router';
-import MainContext from '../../ContextAPI';
+import MainContext from '../../structure/contexts/mainContext';
 
 const Cards = ({foodsToShow}) => {
-    const context = useContext(MainContext);
-    const handleToggleToList = context.handleToggleToList;
-    const cartFoods = context.cartFoods;
-    const favoriteFoods = context.favoriteFoods;
+    const {handleToggleToList, cartFoods, favoriteFoods} = useContext(MainContext);
     
     const [clickedFoodId,setClickedFoodId] = useState();
     const [goToSingleFood, setGoToSingleFood] = useState(false);

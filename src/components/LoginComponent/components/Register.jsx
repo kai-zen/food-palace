@@ -1,10 +1,10 @@
 import React, {useState, useRef, useContext} from 'react';
 import SimpleReactValidator from 'simple-react-validator';
-import MainContext from './../../ContextAPI';
+import { ToastContainer } from 'react-toastify';
+import LoginContext from '../../../structure/contexts/loginContext';
 
 const Register = () => {
-    const context = useContext(MainContext);
-    const handleSignUp = context.handleSignUp;
+    const {handleSignUp} = useContext(LoginContext)
 
     const validator = useRef(new SimpleReactValidator({
         messages: {
@@ -85,6 +85,7 @@ const Register = () => {
             <div className="foot-lnk">
                 <label>قبلا ثبت نام کردید؟  وارد شوید</label>
             </div>
+            <ToastContainer/>
         </div>
     );
 }

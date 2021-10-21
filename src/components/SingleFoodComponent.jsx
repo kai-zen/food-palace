@@ -1,5 +1,5 @@
 import React, {useEffect, useContext} from 'react';
-import MainContext from '../ContextAPI';
+import MainContext from '../structure/contexts/mainContext';
 
 const SingleFood = ({location}) => {
     const context = useContext(MainContext);

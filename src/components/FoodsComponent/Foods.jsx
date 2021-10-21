@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import Title from './Title';
-import Cards from '../Common/Cards';
-import NoResults from '../Common/Others/NoResults';
+import Cards from './Cards';
+import NoResults from './../../others/NoResults';
 
 const Foods = ({foodsToShow, titleOfThisMenu}) => { 
     useEffect(() => {
