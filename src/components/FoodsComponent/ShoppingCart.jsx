@@ -1,8 +1,12 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import MainContext from '../../structure/contexts/mainContext';
 import Foods from './Foods';
 
 const Cart = () => {
+    useEffect(()=>{
+        document.title = 'سبد خرید'
+    })
+
     const {cartFoods, handleCalculater} = useContext(MainContext);
     return (
         <div className='container'> 

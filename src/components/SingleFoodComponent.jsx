@@ -26,6 +26,10 @@ const SingleFood = ({location}) => {
         window.scrollTo(0, 0);
     }, [])
 
+    useEffect(()=>{
+        document.title = 'اطلاعات یک غذا'
+    })
+
     return ( 
         <div id="singleFoodComponentParent">
             <div id="singleFoodComponent" className="container">

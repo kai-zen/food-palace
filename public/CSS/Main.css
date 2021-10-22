@@ -23,6 +23,17 @@ a:hover {
     margin-top: 20px;
 }
 
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+}
+
 
 /* منوی فیکس شده بالای صفحه */
 

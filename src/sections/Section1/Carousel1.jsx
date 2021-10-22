@@ -27,6 +27,10 @@ const Carousel = () => {
       window.scrollTo(0, 0);
     }, [])
 
+    useEffect(()=>{
+      document.title = 'رستوران قصر غذا'
+  })
+
     return (
         <div className="row">
           {/* دکمه اسلاید قبلی و بعدی */}

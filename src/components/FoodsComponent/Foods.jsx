@@ -7,6 +7,10 @@ const Foods = ({foodsToShow, titleOfThisMenu}) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useEffect(()=>{
+        document.title = 'غذاهای هر دسته'
+    })
     
     const whatToRender = () => {
         if (foodsToShow.length !== 0) {
