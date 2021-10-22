@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { orderBy } from 'lodash';
-import Cards from './../components/FoodsComponent/Cards';
+import Foods from '../components/FoodsComponent/Foods';
 
 const ThirdSection = ({foodsToShow}) => {
     const categories = ['اقتصادی ها', 'محبوب ها', 'گران ترین ها'];
@@ -14,7 +14,7 @@ const ThirdSection = ({foodsToShow}) => {
         }else{
             NewfoodsToShow = [...orderBy(NewfoodsToShow, 'price', 'desc')];
         }
-        return <Cards foodsToShow={NewfoodsToShow}/>
+        return <Foods foodsToShow={NewfoodsToShow} titleOfThisMenu='همه غذاها'/>
     }
     return ( 
         <div id="div3" className="container">

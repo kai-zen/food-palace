@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export const paginate = (foods, currentPage, perPage) => {
-    const startIndex = (currentPage - 1) * perPage;
-    return _(foods).slice(startIndex).take(perPage).value();
+export const paginate = (foods, currentPage) => {
+    const startIndex = (currentPage - 1) * 12;
+    return _(foods).slice(startIndex).take(12).value();
 };
