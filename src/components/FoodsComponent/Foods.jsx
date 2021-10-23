@@ -1,5 +1,6 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import Title from './Title';
+import './FoodsComponent.css'
 import Cards from './Cards';
 import NoResults from './../../others/NoResults';
 import { paginate } from './../../structure/paginate';
@@ -36,9 +37,12 @@ const Foods = ({foodsToShow, titleOfThisMenu}) => {
                 <Fragment>
                     <Cards foodsToShow={paginatedFoods}/>
                     <Button onClick={nextPage} style={{
-                        marginRight: '10px'
+                        marginRight: '10px',
+                        backgroundColor: 'var(--gold)'
                     }}>صفحه بعد</Button>
-                    <Button onClick={prevPage}>صفحه قبل</Button>
+                    <Button onClick={prevPage} style={{
+                        backgroundColor: 'var(--gold)'
+                    }}>صفحه قبل</Button>
                 </Fragment>
             );
         }else{

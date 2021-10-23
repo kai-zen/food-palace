@@ -1,16 +1,18 @@
 import React, {useState, useContext, useEffect} from 'react';
-import { Redirect } from 'react-router';
+import { Modal } from 'react-bootstrap';
+import SingleFoodModal from '../SingleFoodModal';
 import MainContext from '../../structure/contexts/mainContext';
 
 const Cards = ({foodsToShow}) => {
-    const {handleToggleToList, cartFoods, favoriteFoods} = useContext(MainContext);
-    
-    const [clickedFoodId,setClickedFoodId] = useState();
-    const [goToSingleFood, setGoToSingleFood] = useState(false);
-    const redirectToSingleFood = (event) => {        
-        setGoToSingleFood(true);
-        setClickedFoodId(event.target.name);
-    };
+    const {handleToggleToList, cartFoods, favoriteFoods, allFoods} = useContext(MainContext);
+
+    const [showSingleFoodModal, setShowSingleFoodModal] = useState(false);
+    const [clickedFoodIndex, setClickedFoodIndex] = useState()
+
+    const handleShowSingleFoodModal = (event)=>{
+        setClickedFoodIndex(event.target.name);
+        setShowSingleFoodModal(true)
+    }
 
     useEffect(()=>{
         foodsToShow.map(foodToShow => {
@@ -31,9 +33,10 @@ const Cards = ({foodsToShow}) => {
         <div className="row">
             {foodsToShow.map(foodToShow =>(
                 <div className="card offset-2 col-8 offset-sm-0 col-sm-6 col-md-4 col-lg-3">
-                    <img className="card-img-top cardImage" name={foodToShow.id}
+                    <img className="card-img-top cardImage"
                     src={`Images/${foodToShow.category}/${foodToShow.name}.jpg`} alt=""
-                    onClick={redirectToSingleFood}/>
+                    name={foodToShow.id}
+                    onClick={(e)=>handleShowSingleFoodModal(e)}/>
                     <div className="card-body cardElement">
                         <h2 className="card-title">{foodToShow.name}</h2>
                         <h4 className="card-text">قیمت:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{foodToShow.price}<small>تومان</small></h4>
@@ -48,20 +51,21 @@ const Cards = ({foodsToShow}) => {
                                 handleToggleToList(event.target, foodToShow.id, false, true)
                             }}/>
                         </p>
-                        <p className="iconStyle d3IconStyle" onClick={redirectToSingleFood}>
+                        <p className="iconStyle d3IconStyle"
+                        name={foodsToShow.id}
+                        onClick={(e)=>handleShowSingleFoodModal(e)}>
                             <span className="fas fa-info" />
                         </p>
                         </div>
                     </div>
-                    {goToSingleFood ? <Redirect
-                        to={{
-                            pathname: `/singleFood/${clickedFoodId}`,
-                            state: {key: clickedFoodId}
-                        }}
-                        /> : null
-                    }
                 </div>
             ))}
+            <Modal
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                show={showSingleFoodModal}>
+                <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]}/>
+            </Modal>
         </div>
      );
 }

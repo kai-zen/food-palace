@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import MainContext from '../structure/contexts/mainContext';
 
-const SecondSection = () => {
+const Section2 = () => {
     const {favoriteFoods, cartFoods, handleToggleToList} = useContext(MainContext);
 
     useEffect(() => {
@@ -75,4 +75,4 @@ const SecondSection = () => {
      );
 }
  
-export default SecondSection;
+export default Section2;

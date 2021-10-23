@@ -4,6 +4,7 @@ import HamburgerMenu from './components/HamburgerMenu';
 import NavigationOptions from './components/NavigationOptions';
 import FloatingMenu from './components/FloatingMenu';
 import LoginRequest from './../others/LoginRequest';
+import './nav.css'
 
 const MainNav = () => {
     return (
