@@ -41,21 +41,16 @@ const Cards = ({foodsToShow}) => {
                         <h2 className="card-title">{foodToShow.name}</h2>
                         <h4 className="card-text">قیمت:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{foodToShow.price}<small>تومان</small></h4>
                         <div className='mt20'>
-                        <p className="iconStyle d3IconStyle" >
-                            <span className="fas fa-heart" id={`heartIcon${foodToShow.id}`} onClick={(event)=>{
-                                handleToggleToList(event.target, foodToShow.id, true, true)
-                            }}/>
-                        </p>                       
-                        <p className="iconStyle d3IconStyle" >
-                            <span className="fas fa-shopping-cart" id={`cartIcon${foodToShow.id}`} onClick={(event)=>{
-                                handleToggleToList(event.target, foodToShow.id, false, true)
-                            }}/>
-                        </p>
-                        <p className="iconStyle d3IconStyle"
-                        name={foodsToShow.id}
-                        onClick={(e)=>handleShowSingleFoodModal(e)}>
-                            <span className="fas fa-info" />
-                        </p>
+                            <p className="iconStyle d3IconStyle" >
+                                <span className="fas fa-heart" id={`heartIcon${foodToShow.id}`} onClick={(event)=>{
+                                    handleToggleToList(event.target, foodToShow.id, true, true)
+                                }}/>
+                            </p>                       
+                            <p className="iconStyle d3IconStyle" >
+                                <span className="fas fa-shopping-cart" id={`cartIcon${foodToShow.id}`} onClick={(event)=>{
+                                    handleToggleToList(event.target, foodToShow.id, false, true)
+                                }}/>
+                            </p>
                         </div>
                     </div>
                 </div>

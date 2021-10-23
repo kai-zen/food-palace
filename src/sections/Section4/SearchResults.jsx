@@ -1,33 +1,39 @@
 import React, {Fragment, useState, useContext} from 'react';
-import { Redirect } from 'react-router';
+import { Modal } from 'react-bootstrap';
+import SingleFoodModal from '../../components/SingleFoodModal';
 import MainContext from '../../structure/contexts/mainContext';
 
 const SearchResults = ({filteredFoods}) => {
     const context = useContext(MainContext);
     const allFoods = context.allFoods;
 
-    const [clickedFoodId,setClickedFoodId] = useState();
-    const [goToSingleFood, setGoToSingleFood] = useState(false);
-    const redirectToSingleFood = (id) => {        
-        setGoToSingleFood(true);
-        setClickedFoodId(id);
-    };
+    const [showSingleFoodModal, setShowSingleFoodModal] = useState(false);
+    const [clickedFoodIndex, setClickedFoodIndex] = useState()
+
+    const handleShowSingleFoodModal = (event)=>{
+        setClickedFoodIndex(event.target.id);
+        setShowSingleFoodModal(true)
+    }
+
     return (
         <Fragment>
             {filteredFoods.map(filteredFood => (
-                <div className='d4SearchResult' onClick={() => redirectToSingleFood(filteredFood.id)}>
+                <div
+                className='d4SearchResult'
+                id={filteredFood.id}
+                onClick={(e)=>handleShowSingleFoodModal(e)}
+                >
                     <img src={`Images/${filteredFood.category}/${filteredFood.name}.jpg`} alt=""/>
                     <h2 className="card-title">{`${filteredFood.category} / ${filteredFood.name}`}</h2>
                     <button className='btn'>بیشتر...</button>
                 </div>  
             ))}
-            {goToSingleFood ? <Redirect
-                        to={{
-                            pathname: `/singleFood/${allFoods[clickedFoodId].id}`,
-                            state: {key: allFoods[clickedFoodId].id}
-                        }}
-                        /> : null
-                    }        
+            <Modal
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                show={showSingleFoodModal}>
+                <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]}/>
+            </Modal>        
         </Fragment>
      );
 }
