@@ -24,6 +24,9 @@ const AddModal = ({handleShowAddModal}) => {
                     <option>گیاهی</option>
                 </select>
             </div>
+            <button className='btn btn-success btn-lg'>
+                ثبت
+            </button>
         </form>
         <span onClick={handleShowAddModal} className="closeSpan">
             <i className='fas fa-times'></i>

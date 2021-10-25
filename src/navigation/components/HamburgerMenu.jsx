@@ -37,7 +37,7 @@ const HamburgerMenu = () => {
             </label>
             <div id="hidden-menu">
                 <div id="hidden-menu-items">
-                    <a href="/#" className="hidden-menu-item">خانه</a>
+                    <Link to="/" className="hidden-menu-item">خانه</Link>
                     <p className="hidden-menu-item" onClick={navContext.handleShowUserModal} style={{cursor: 'pointer'}}>
                         حساب کاربری
                     </p>

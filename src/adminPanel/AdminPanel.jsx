@@ -14,7 +14,7 @@ const AdminPanel = () => {
     return (
         <div id='adminPanelParent'>
             <div className='container'>
-                <h1 className='d-block'>ADMIN PANEL</h1>
+                <h1 className='d-block h1'>ADMIN PANEL</h1>
                 <button className='btn btn-warning btn-lg btn-dark' id='addNewFood'
                 onClick={handleShowAddModal}
                 >

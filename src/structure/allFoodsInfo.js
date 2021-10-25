@@ -1,6 +1,6 @@
 export const allFoodsInfo = {
     ghormeSabzi: {
-        id: '0',
+        id: 0,
         name: 'قرمه سبزی',
         price: 34000,
         category: 'سنتی',
@@ -9,7 +9,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     gheyme: {
-        id: '1',
+        id: 1,
         name: 'قیمه',
         price: 32000,
         category: 'سنتی',
@@ -18,7 +18,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     koobide: {
-        id: '2',
+        id: 2,
         name: 'کوبیده',
         price: 40000,
         category: 'سنتی',
@@ -27,7 +27,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     morgheKamel: {
-        id: '3',
+        id: 3,
         name: 'مرغ کامل',
         price: 70000,
         category: 'سنتی',
@@ -36,7 +36,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     aashReshteh: {
-        id: '4',
+        id: 4,
         name: 'آش رشته',
         price: 20000,
         category: 'سنتی',
@@ -45,7 +45,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     dizi: {
-        id: '5',
+        id: 5,
         name: 'دیزی',
         price: 45000,
         category: 'سنتی',
@@ -54,7 +54,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     maahi: {
-        id: '6',
+        id: 6,
         name: 'ماهی',
         price: 90000,
         category: 'سنتی',
@@ -63,7 +63,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     joojeKabab: {
-        id: '7',
+        id: 7,
         name: 'جوجه کباب',
         price: 37000,
         category: 'سنتی',
@@ -72,7 +72,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     pizza: {
-        id: '8',
+        id: 8,
         name: 'پیتزای گوشت',
         price: 57000,
         category: 'فست فود',
@@ -81,7 +81,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     hamburger: {
-        id: '9',
+        id: 9,
         name: 'همبرگر',
         price: 38000,
         category: 'فست فود',
@@ -90,7 +90,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     pasta: {
-        id: '10',
+        id: 10,
         name: 'پاستا آلفردو',
         price: 42000,
         category: 'فست فود',
@@ -99,7 +99,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     wrapeMorgh: {
-        id: '11',
+        id: 11,
         name: 'رپ مرغ',
         price: 24000,
         category: 'فست فود',
@@ -108,7 +108,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     steak: {
-        id: '12',
+        id: 12,
         name: 'استیک',
         price: 99000,
         category: 'فست فود',
@@ -117,7 +117,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     steakeMorgh: {
-        id: '13',
+        id: 13,
         name: 'استیک مرغ',
         price: 45000,
         category: 'فست فود',
@@ -126,7 +126,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     pirashki: {
-        id: '14',
+        id: 14,
         name: 'پیراشکی',
         price: 22000,
         category: 'فست فود',
@@ -135,7 +135,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     sokhari: {
-        id: '15',
+        id: 15,
         name: 'فیله سوخاری',
         price: 70000,
         category: 'فست فود',
@@ -144,7 +144,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     homos: {
-        id: '16',
+        id: 16,
         name: 'حمص',
         price: 18000,
         category: 'گیاهی',
@@ -153,7 +153,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     taco: {
-        id: '17',
+        id: 17,
         name: 'تاکو گیاهی',
         price: 16000,
         category: 'گیاهی',
@@ -162,7 +162,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     vegeterianPizza: {
-        id: '18',
+        id: 18,
         name: 'پیتزای سبزیجات',
         price: 45000,
         category: 'گیاهی',
@@ -171,7 +171,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     pooreSibzamini: {
-        id: '19',
+        id: 19,
         name: 'پوره سیب زمینی',
         price: 11000,
         category: 'گیاهی',
@@ -180,7 +180,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     pancake: {
-        id: '20',
+        id: 20,
         name: 'پنکیک کاراملی',
         price: 19000,
         category: 'گیاهی',
@@ -189,7 +189,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     crap: {
-        id: '21',
+        id: 21,
         name: 'کرپ توت فرنگی',
         price: 23000,
         category: 'گیاهی',
@@ -198,7 +198,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     cake: {
-        id: '22',
+        id: 22,
         name: 'کیک خامه ای',
         price: 12000,
         category: 'گیاهی',
@@ -207,7 +207,7 @@ export const allFoodsInfo = {
         isItInCart: false
     },
     sweet: {
-        id: '23',
+        id: 23,
         name: 'شیرینی آلبالویی',
         price: 12000,
         category: 'گیاهی',

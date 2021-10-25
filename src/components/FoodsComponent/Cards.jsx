@@ -26,6 +26,7 @@ const Cards = ({foodsToShow}) => {
                     document.getElementById(`cartIcon${foodToShow.id}`).style.color = 'green';
                 }
             };
+            return true
         })
     });
 

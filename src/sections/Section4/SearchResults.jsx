@@ -4,15 +4,14 @@ import SingleFoodModal from '../../components/SingleFoodModal';
 import MainContext from '../../structure/contexts/mainContext';
 
 const SearchResults = ({filteredFoods}) => {
-    const context = useContext(MainContext);
-    const allFoods = context.allFoods;
+    const {allFoods} = useContext(MainContext);
 
     const [showSingleFoodModal, setShowSingleFoodModal] = useState(false);
     const [clickedFoodIndex, setClickedFoodIndex] = useState()
 
-    const handleShowSingleFoodModal = (event)=>{
-        setClickedFoodIndex(event.target.id);
-        setShowSingleFoodModal(true)
+    const handleShowSingleFoodModal = (id)=>{
+        setClickedFoodIndex(id);
+        setShowSingleFoodModal(true);
     }
 
     return (
@@ -21,11 +20,17 @@ const SearchResults = ({filteredFoods}) => {
                 <div
                 className='d4SearchResult'
                 id={filteredFood.id}
-                onClick={(e)=>handleShowSingleFoodModal(e)}
+                onClick={(e)=>handleShowSingleFoodModal(e.target.id)}
                 >
-                    <img src={`Images/${filteredFood.category}/${filteredFood.name}.jpg`} alt=""/>
-                    <h2 className="card-title">{`${filteredFood.category} / ${filteredFood.name}`}</h2>
-                    <button className='btn'>بیشتر...</button>
+                    <img src={`Images/${filteredFood.category}/${filteredFood.name}.jpg`} alt="" style={{
+                        pointerEvents: 'none'
+                    }}/>
+                    <h2 className="card-title" style={{
+                        pointerEvents: 'none'
+                    }}>{`${filteredFood.category} / ${filteredFood.name}`}</h2>
+                    <button className='btn' style={{
+                        pointerEvents: 'none'
+                    }}>بیشتر...</button>
                 </div>  
             ))}
             <Modal
@@ -33,7 +38,7 @@ const SearchResults = ({filteredFoods}) => {
                 centered
                 show={showSingleFoodModal}>
                 <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]}/>
-            </Modal>        
+            </Modal> 
         </Fragment>
      );
 }

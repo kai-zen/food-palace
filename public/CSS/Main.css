@@ -290,6 +290,8 @@ label {
     border: 3px solid var(--gold);
     border-radius: 10px;
     justify-content: space-between;
+    position: relative;
+    z-index: 10;
 }
 
 #calculater h2 {
@@ -297,9 +299,16 @@ label {
 }
 
 #noResults {
-    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    color: var(--gold);
+    text-align: center;
+    letter-spacing: 4px;
 }
 
-#noResults:hover {
-    transform: translate(-15px);
+#noResults h1 {
+    font-size: 3rem;
+    text-shadow: 18px 0px 16px var(--gold);
+    font-weight: 900;
+    font-family: 'Markazi Text', serif !important;
 }

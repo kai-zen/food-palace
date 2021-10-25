@@ -27,6 +27,7 @@
 #foodsComponent,
 #singleFoodComponent {
     margin-top: 100px;
+    z-index: 10;
     position: relative;
 }
 
