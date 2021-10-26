@@ -3,6 +3,7 @@ import LoginContext from '../../structure/contexts/loginContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NavContext from '../../structure/contexts/navigationContext';
+import { Redirect } from 'react-router';
 
 const LoginState = props => {
     //اطلاعات کاربر
@@ -45,8 +46,8 @@ const LoginState = props => {
     }
     
     // متود ورود
-    const {handleShowUserModal} = useContext(NavContext);
-    const [loggedInUser, setLoggedInUser] = useState();
+    const {setShowUserModal} = useContext(NavContext);
+    const [loggedInUser, setLoggedInUser] = useState(null);
     const [redirectToHome, setRedirectToHome] = useState(false);
 
     const handleLogin = (email, pass) => {
@@ -56,7 +57,7 @@ const LoginState = props => {
         let passIsOkay = emailIsOkay[0].password === pass;
         if(emailIsOkay.length > 0 && passIsOkay){
           setLoggedInUser(emailIsOkay[0]);
-          handleShowUserModal();
+          setShowUserModal(false);
           setRedirectToHome(true);
         }else{
           toast.error('رمز وارد شده صحیح نیست', {
@@ -72,6 +73,13 @@ const LoginState = props => {
       }
     }
 
+    // متود لاگ عوت
+    const handleLogout = () => {
+      setLoggedInUser(null);
+      setRedirectToHome(false);
+      return <Redirect to='/'/>
+    } 
+
     return ( 
         <LoginContext.Provider value={{
             handleSignUp: handleSignUp,
@@ -80,6 +88,7 @@ const LoginState = props => {
             redirectToHome: redirectToHome,
             setRedirectToHome: setRedirectToHome,
             loggedInUser: loggedInUser,
+            handleLogout: handleLogout
         }}> 
             {props.children}
         </LoginContext.Provider>

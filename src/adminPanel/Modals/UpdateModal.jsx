@@ -1,16 +1,24 @@
 import React from 'react'
 
-const AddModal = ({handleShowAddModal}) => {
-    return (
-    <div id='addModal'>
+const UpdateModal = ({foodInfo, setShowUpdateModal}) => {
+
+    const handleCloseUpdateModal = ()=>{
+        setShowUpdateModal(false);
+        document.getElementById('singleFoodModal').style.opacity = '1'; 
+    }
+
+    return ( 
+        <div id='updateModal' style={{
+            backgroundColor: 'lightblue'
+        }}>
         <form>
             <div>
                 <h3>نام غذا:</h3>
-                <input type="text" name="" id="" className="form-control" />
+                <input type="text" name="" id="" className="form-control" value={foodInfo.name}/>
             </div>
             <div>
                 <h3>قیمت غذا:</h3>
-                <input type="text" name="" id="" className="form-control"/>
+                <input type="text" name="" id="" className="form-control" value={foodInfo.price}/>
             </div>
             <div>
                 <h3>تصویر غذا:</h3>
@@ -24,15 +32,15 @@ const AddModal = ({handleShowAddModal}) => {
                     <option>گیاهی</option>
                 </select>
             </div>
-            <button className='btn btn-success btn-lg'>
+            <button className='btn btn-info btn-lg' type='submit'>
                 ثبت
             </button>
         </form>
-        <span onClick={handleShowAddModal} className="closeSpan">
+        <span onClick={handleCloseUpdateModal} className="closeSpan">
             <i className='fas fa-times'></i>
         </span>
     </div>
      );
 }
  
-export default AddModal;
+export default UpdateModal;

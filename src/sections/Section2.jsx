@@ -2,19 +2,21 @@ import React, {useContext, useEffect} from 'react';
 import MainContext from '../structure/contexts/mainContext';
 
 const Section2 = () => {
-    const {favoriteFoods, cartFoods, handleToggleToList} = useContext(MainContext);
+    const {allFoods, handleToggleToList} = useContext(MainContext);
+    
+    const setIconColors = ()=>{
+        let heartIcon = document.getElementById('d2-heart-icon');
+        let cartIcon = document.getElementById('d2-cart-icon');
+        if(allFoods[15].isItInFav && heartIcon){
+            heartIcon.style.color = 'red';
+        }
+        if(allFoods[15].isItInCart && cartIcon){
+            cartIcon.style.color = 'green';
+        }
+    }
 
     useEffect(() => {
-        for(let i=0; i < favoriteFoods.length; i++){
-            if('15' === favoriteFoods[i].id){
-                document.getElementById('d2-heart-icon').style.color = 'red';
-            }  
-        };
-        for(let i=0; i < cartFoods.length; i++){
-            if('15' === cartFoods[i].id){
-                document.getElementById('d2-cart-icon').style.color = 'green';
-            }
-        };
+        setIconColors();
     });
 
     const categories = ['فست فود','گیاهخواری', 'سنتی ایرانی'];

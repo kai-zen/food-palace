@@ -19,7 +19,7 @@ const HamburgerMenu = () => {
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
                     show={navContext.showUserModal}>
-                    <UserModal handleShowUserModal={navContext.handleShowUserModal} userInfo={loginContext.loggedInUser}/>
+                    <UserModal setShowUserModal={navContext.setShowUserModal} userInfo={loginContext.loggedInUser}/>
                 </Modal>
             )
         }else{
@@ -38,7 +38,9 @@ const HamburgerMenu = () => {
             <div id="hidden-menu">
                 <div id="hidden-menu-items">
                     <Link to="/" className="hidden-menu-item">خانه</Link>
-                    <p className="hidden-menu-item" onClick={navContext.handleShowUserModal} style={{cursor: 'pointer'}}>
+                    <p className="hidden-menu-item" onClick={()=>{
+                        navContext.setShowUserModal('true')
+                        }} style={{cursor: 'pointer'}}>
                         حساب کاربری
                     </p>
                     {navContext.showUserModal ? handleRenderOrRedirect() : null}

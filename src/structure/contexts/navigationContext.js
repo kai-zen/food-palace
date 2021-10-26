@@ -3,8 +3,8 @@ import { createContext } from "react";
 const NavContext = createContext({
     showMenusModal: false,
     showUserModal: false,
-    handleShowMenusModal: () => {},
-    handleShowUserModal: () => {},
+    setShowUserModal: () => {},
+    setShowMenusModal: () => {},
 });
 
 export default NavContext;

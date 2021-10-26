@@ -6,17 +6,17 @@ import FirstSection from './sections/Section1/FirstSection';
 import Section2 from './sections/Section2';
 import ThirdSection from './sections/Section3/Section3';
 import Section4 from './sections/Section4/Section4';
-import Foods from './components/FoodsComponent/Foods';
+import Foods from './foods/Foods';
 import LoginComponent from './components/LoginComponent/LoginComponent';
 import MainContext from './structure/contexts/mainContext';
-import Cart from './components/FoodsComponent/ShoppingCart';
+import Cart from './foods/ShoppingCart';
 import Footer from './others/Footer';
 import NavState from './navigation/NavState';
 import Wave from './others/Wave';
 import LoginState from './components/LoginComponent/LoginState';
 import LoginContext from './structure/contexts/loginContext';
 import NotFound404 from './others/404';
-import FavoriteFoods from './components/FoodsComponent/FavoriteFoods';
+import FavoriteFoods from './foods/FavoriteFoods';
 import AdminPanel from './adminPanel/AdminPanel';
 
 const App = () => {
@@ -33,9 +33,9 @@ const App = () => {
             </NavState>    
             <Switch>
               <Route path="/login" component={LoginComponent} />
-              <Route path="/sonati-foods" render={()=><Foods foodsToShow={context.sonatiFoods} titleOfThisMenu='غذاهای سنتی' />} />
-              <Route path="/fastfoods" render={()=><Foods foodsToShow={context.fastfoods} titleOfThisMenu='فست فود ها' />}/>
-              <Route path="/giahi-foods" render={()=><Foods foodsToShow={context.giahiFoods} titleOfThisMenu='غذاهای گیاهی' />}/>
+              <Route path="/sonati-foods" render={()=><Foods foodsToShow={context.sonatiFoods} titleOfThisMenu='غذاهای سنتی' renderFooterOrNot={true}/>} />
+              <Route path="/fastfoods" render={()=><Foods foodsToShow={context.fastfoods} titleOfThisMenu='فست فود ها' renderFooterOrNot={true}/>}/>
+              <Route path="/giahi-foods" render={()=><Foods foodsToShow={context.giahiFoods} titleOfThisMenu='غذاهای گیاهی' renderFooterOrNot={true}/>}/>
               <Route path="/favorites" component={FavoriteFoods}/>
               <Route path="/shopping-cart" component={Cart} />
               <Route exact path="/">
@@ -45,12 +45,12 @@ const App = () => {
                 <ThirdSection foodsToShow={context.allFoods}/>
                 <Wave/>
                 <Section4/>
+                <Footer/>
               </Route>
               <Route path='/admin-panel' component={AdminPanel}/>
               <Route component={NotFound404}/>
             </Switch>
           </LoginState>
-          <Footer/>
       </Fragment>
   );
 }

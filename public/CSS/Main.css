@@ -44,6 +44,12 @@ a:hover {
     background-position: right;
 }
 
+button:disabled {
+    opacity: .5;
+    background-color: var(--white);
+    color: var(--dark);
+}
+
 #div1 {
     background-color: rgba(0, 0, 0, .7);
     position: relative;

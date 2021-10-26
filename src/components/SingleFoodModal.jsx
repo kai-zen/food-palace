@@ -1,6 +1,7 @@
 import React, {useEffect, useContext, useState} from 'react';
 import { Modal } from 'react-bootstrap';
-import PanelDeleteModal from '../adminPanel/DeleteModal';
+import PanelDeleteModal from '../adminPanel/Modals/DeleteModal';
+import UpdateModal from '../adminPanel/Modals/UpdateModal';
 import LoginContext from '../structure/contexts/loginContext';
 import MainContext from '../structure/contexts/mainContext';
 import './singleFood.css'
@@ -18,6 +19,13 @@ const SingleFoodModal = ({setShowSingleFoodModal, foodInfo}) => {
         document.getElementById('singleFoodModal').style.opacity = '0.5'; 
     }
 
+    const [showUpdateModal, setShowUpdateModal] = useState(false);
+
+    const handleShowUpdateModal = () => {
+        setShowUpdateModal(true);
+        document.getElementById('singleFoodModal').style.opacity = '0.5'; 
+    }
+
     const panelOptions = () => {
         if(loggedInUser && loggedInUser.isAdmin){
             return (
@@ -29,7 +37,13 @@ const SingleFoodModal = ({setShowSingleFoodModal, foodInfo}) => {
                         show={showDeleteModal}>
                         <PanelDeleteModal setShowDeleteModal={setShowDeleteModal} />
                     </Modal>
-                    <button className='btn btn-lg btn-warning m-1'>ویرایش غذا</button>
+                    <button className='btn btn-lg btn-warning m-1' onClick={handleShowUpdateModal}>ویرایش غذا</button>
+                    <Modal
+                        aria-labelledby="contained-modal-title-vcenter"
+                        centered
+                        show={showUpdateModal}>
+                        <UpdateModal setShowUpdateModal={setShowUpdateModal} foodInfo={foodInfo}/>
+                    </Modal>
                 </div>
             )
         }else{

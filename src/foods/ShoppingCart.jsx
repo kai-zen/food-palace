@@ -1,5 +1,6 @@
-import React, {useContext, useEffect} from 'react';
-import MainContext from '../../structure/contexts/mainContext';
+import React, {Fragment, useContext, useEffect} from 'react';
+import Footer from '../others/Footer';
+import MainContext from '../structure/contexts/mainContext';
 import Foods from './Foods';
 
 const Cart = () => {
@@ -9,8 +10,9 @@ const Cart = () => {
 
     const {cartFoods, handleCalculater} = useContext(MainContext);
     return (
+    <Fragment>
         <div className='container'> 
-            <Foods foodsToShow={cartFoods} titleOfThisMenu='سبد خرید'/>
+            <Foods foodsToShow={cartFoods} titleOfThisMenu='سبد خرید' renderFooterOrNot={false} />
             <div id="calculater">
                 <h2>:مجموع قیمت</h2>
                 <p id="priceResult">{handleCalculater()} تومان</p>
@@ -19,6 +21,8 @@ const Cart = () => {
                 </button>
             </div>
         </div>
+        <Footer/>
+    </Fragment>
      );
 }
  

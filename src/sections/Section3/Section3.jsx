@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { orderBy } from 'lodash';
 import './section3.css'
-import Foods from '../../components/FoodsComponent/Foods';
+import Foods from '../../foods/Foods';
 
 const ThirdSection = ({foodsToShow}) => {
     const categories = ['اقتصادی ها', 'محبوب ها', 'گران ترین ها'];
@@ -15,7 +15,7 @@ const ThirdSection = ({foodsToShow}) => {
         }else{
             NewfoodsToShow = [...orderBy(NewfoodsToShow, 'price', 'desc')];
         }
-        return <Foods foodsToShow={NewfoodsToShow} titleOfThisMenu='همه غذاها'/>
+        return <Foods foodsToShow={NewfoodsToShow} titleOfThisMenu={null} renderFooterOrNot={false}/>
     }
     return ( 
         <div id="div3" className="container">

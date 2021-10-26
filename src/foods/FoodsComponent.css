@@ -26,12 +26,12 @@
 
 #foodsComponent,
 #singleFoodComponent {
-    margin-top: 100px;
     z-index: 10;
     position: relative;
 }
 
 #foodsComponentH1 h1 {
+    margin-top: 100px;
     color: var(--dark);
     text-align: center;
     font-size: 70px;

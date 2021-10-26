@@ -7,6 +7,7 @@ const LoginContext = createContext({
     setRedirectToHome: () => {},
     users: [],
     loggedInUser: null,
+    handleLogout: () => {}
 });
 
 export default LoginContext;

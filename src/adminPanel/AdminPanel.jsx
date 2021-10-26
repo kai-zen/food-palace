@@ -1,21 +1,36 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { Modal } from 'react-bootstrap';
-import './adminPanel.css'
-import AddModal from './AddModal';
+import { isEmpty } from 'lodash';
+import './adminPanel.css';
+import Foods from '../foods/Foods';
+import AddModal from './Modals/AddModal';
 import Section4 from '../sections/Section4/Section4';
+import MainContext from './../structure/contexts/mainContext';
+import Wave from '../others/Wave';
+import { Redirect } from 'react-router';
 
 const AdminPanel = () => {
+    const {allFoods,loggedInUser} = useContext(MainContext);
     const[showAddModal, setShowAddModal] = useState(false);
 
     const handleShowAddModal = () => {
         setShowAddModal(!showAddModal);
     }
 
+    const isLoggedIn = ()=>{
+        if(isEmpty(loggedInUser) || loggedInUser.isAdmin === false){
+            return <Redirect to='/'/>
+        }
+    }
+
     return (
         <div id='adminPanelParent'>
-            <div className='container'>
+            {isLoggedIn()}
+            <div className='container' style={{
+                paddingBottom: '30px'
+            }}>
                 <h1 className='d-block h1'>ADMIN PANEL</h1>
-                <button className='btn btn-warning btn-lg btn-dark' id='addNewFood'
+                <button className='btn btn-lg btn-success' id='addNewFood'
                 onClick={handleShowAddModal}
                 >
                     افزودن غذای جدید
@@ -26,8 +41,10 @@ const AdminPanel = () => {
                     show={showAddModal}>
                         <AddModal handleShowAddModal={handleShowAddModal}/>
                     </Modal>
-                <Section4/>
+                <Foods foodsToShow={allFoods} titleOfThisMenu={null} renderFooterOrNot={false}/>
             </div>
+            <Wave/>
+            <Section4/>
         </div>
      );
 }

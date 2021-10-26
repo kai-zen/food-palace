@@ -28,7 +28,7 @@ const NavigationOptions = () => {
             </NavLink>
             <p
             className="navigation-option"
-            onClick={navContext.handleShowMenusModal}
+            onClick={()=>navContext.setShowMenusModal(true)}
             style={{cursor: 'pointer'}}>
                 منو ها
             </p>
@@ -36,7 +36,7 @@ const NavigationOptions = () => {
             aria-labelledby="contained-modal-title-vcenter"
             centered
             show={navContext.showMenusModal}>
-                <MenusModal handleShowMenusModal={navContext.handleShowMenusModal}/>
+                <MenusModal setShowMenusModal={navContext.setShowMenusModal}/>
             </Modal>
             <NavLink to="/" exact className="navigation-option" id="login-1">خانه</NavLink>
         </div>
