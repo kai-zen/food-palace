@@ -1,8 +1,8 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import MainContext from '../structure/contexts/mainContext';
 
 
-const SingleCard = ({foodToShow, handleShowSingleFoodModal}) => {
+const SingleCard = ({foodToShow, handleShowSingleFoodModal, allFoods}) => {
     const {handleToggleToList} = useContext(MainContext);
 
     const setHeartIconColor = ()=>{
@@ -15,8 +15,7 @@ const SingleCard = ({foodToShow, handleShowSingleFoodModal}) => {
     }
 
     const setCartIconColor = ()=>{
-        let cartIcon = document.getElementById(`cartIcon${foodToShow.id}`);
-        
+        let cartIcon = document.getElementById(`cartIcon${foodToShow.id}`);   
         if(foodToShow.isItInCart && cartIcon){
             cartIcon.style.color = 'green';
         }else{
@@ -31,7 +30,7 @@ const SingleCard = ({foodToShow, handleShowSingleFoodModal}) => {
 
     useEffect(()=>{
         setIconColors()
-    })
+    });
 
     return ( 
         <div className="card offset-2 col-8 offset-sm-0 col-sm-6 col-md-4 col-lg-3">

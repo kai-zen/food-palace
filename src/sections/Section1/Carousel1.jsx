@@ -1,5 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
-import { Redirect } from 'react-router';
+import { Modal } from 'react-bootstrap';
+import SingleFoodModal from '../../components/SingleFoodModal';
 import MainContext from '../../structure/contexts/mainContext';
 
 const Carousel = () => {
@@ -7,17 +8,26 @@ const Carousel = () => {
   const handleToggleToList = context.handleToggleToList;
   const allFoods = context.allFoods;
 
-  const [clickedFoodId,setClickedFoodId] = useState();
-  const [goToSingleFood, setGoToSingleFood] = useState(false);
-  const redirectToSingleFood = (id) => {        
-      setGoToSingleFood(true);
-      setClickedFoodId(id);
-  };
+  const [showSingleFoodModal, setShowSingleFoodModal] = useState(false);
+  const [clickedFoodIndex, setClickedFoodIndex] = useState(18);
+
+  const handleShowSingleFoodModal = (id)=>{
+    let i=0
+    while(true){
+        if(allFoods[i].id == id){
+            setClickedFoodIndex(i);
+            break;
+        }else{
+            ++i;
+        }
+    }
+    setShowSingleFoodModal(true);
+}
 
     useEffect(() => {
       const cartFoods = context.cartFoods;
       cartFoods.map(cartFood => {
-        if(cartFood.id === '18' || cartFood.id === '20' || cartFood.id === '11' || cartFood.id === '9' || cartFood.id === '6'){
+        if(cartFood.id === 18 || cartFood.id === 20 || cartFood.id === 11 || cartFood.id === 9 || cartFood.id === 6){
           document.getElementById(`cartBtn${cartFood.id}`).innerText = 'حذف از سبد';
         }
         return true;
@@ -51,7 +61,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>پیتزای سبزیجات</p>
                   <button className="btn btn-warning btn-lg" id='cartBtn18' onClick={(event)=>handleToggleToList(event.target, '18', false, false)}>سفارش</button>
-                  <button onClick={() => redirectToSingleFood(18)} className="btn btn-danger btn-lg">صفحه غذا</button>
+                  <button onClick={()=>handleShowSingleFoodModal(18)} className="btn btn-danger btn-lg">صفحه غذا</button>
                 </div>
               </div>
               <div className="carousel-item">
@@ -59,7 +69,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>پنکیک کاراملی</p>
                   <button className="btn btn-warning btn-lg" id='cartBtn20' onClick={(event)=>handleToggleToList(event.target, '20', false, false)}>سفارش</button>
-                  <button onClick={() => redirectToSingleFood(20)} className="btn btn-danger btn-lg">صفحه غذا</button>
+                  <button onClick={()=>handleShowSingleFoodModal(20)} className="btn btn-danger btn-lg">صفحه غذا</button>
                 </div>
               </div>
               <div className="carousel-item">
@@ -67,7 +77,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>رپ مرغ و سبزیجات</p>
                   <button className="btn btn-warning btn-lg" id='cartBtn11' onClick={(event)=>handleToggleToList(event.target, '11', false, false)}>سفارش</button>
-                  <button onClick={() => redirectToSingleFood(11)} className="btn btn-danger btn-lg">صفحه غذا</button>
+                  <button onClick={()=>handleShowSingleFoodModal(11)} className="btn btn-danger btn-lg">صفحه غذا</button>
                 </div>
               </div>
               <div className="carousel-item">
@@ -75,7 +85,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>دوبل برگر ویژه</p>
                   <button className="btn btn-warning btn-lg" id='cartBtn9' onClick={(event)=>handleToggleToList(event.target, '9', false, false)}>سفارش</button>
-                  <button className="btn btn-danger btn-lg" onClick={() => redirectToSingleFood(9)}>صفحه غذا</button>
+                  <button className="btn btn-danger btn-lg" onClick={()=>handleShowSingleFoodModal(9)}>صفحه غذا</button>
                 </div>
               </div>
               <div className="carousel-item">
@@ -83,7 +93,7 @@ const Carousel = () => {
                 <div className="carousel-caption">
                   <p>ماهی کبابی(رژیمی)</p>
                   <button className="btn btn-warning btn-lg" id='cartBtn6' onClick={(event)=>handleToggleToList(event.target, '6', false, false)}>سفارش</button>
-                  <button onClick={() => redirectToSingleFood(6)} className="btn btn-danger btn-lg">صفحه غذا</button>
+                  <button onClick={()=>handleShowSingleFoodModal(6)} className="btn btn-danger btn-lg">صفحه غذا</button>
                 </div>
               </div>
             </div>
@@ -97,13 +107,12 @@ const Carousel = () => {
               </ol>
             </div>
           </div>
-          {goToSingleFood ? <Redirect
-                        to={{
-                            pathname: `/singleFood/${allFoods[clickedFoodId].id}`,
-                            state: {key: allFoods[clickedFoodId].id}
-                        }}
-                        /> : null
-                    }
+          <Modal
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                show={showSingleFoodModal}>
+                <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]} clickedFoodIndex={clickedFoodIndex}/>
+            </Modal>
         </div>
      );
 }

@@ -26,9 +26,9 @@ const Section4 = () => {
     return ( 
     <div id="div4">
         <div className="container">
-            <form id="searchForm">
-            <input type="text" id="d4SearchInput" onChange={(e) => handleSearch(e.target.value)} placeholder="دنبال چی میگردی؟..." />
-            <button className="btn btn-dark rounded-circle" type="submit">
+            <form id="searchForm" className='row'>
+            <input type="text" id="d4SearchInput" onChange={(e) => handleSearch(e.target.value)} placeholder="دنبال چی میگردی؟..." className='offset-1 col-10 offset-sm-2 col-sm-8'/>
+            <button className="btn btn-dark rounded-circle offset-1 offset-sm-2" type="submit">
                 <i className="fas fa-search" />
             </button>
             </form>

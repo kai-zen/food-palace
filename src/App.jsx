@@ -18,6 +18,7 @@ import LoginContext from './structure/contexts/loginContext';
 import NotFound404 from './others/404';
 import FavoriteFoods from './foods/FavoriteFoods';
 import AdminPanel from './adminPanel/AdminPanel';
+import PanelState from './adminPanel/PanelState';
 
 const App = () => {
   window.addEventListener('load', () => {
@@ -27,6 +28,7 @@ const App = () => {
   const loginContext = useContext(LoginContext);
   return (
       <Fragment>
+        <PanelState>
           <LoginState>
             <NavState>
               <MainNav/>
@@ -51,6 +53,7 @@ const App = () => {
               <Route component={NotFound404}/>
             </Switch>
           </LoginState>
+        </PanelState>
       </Fragment>
   );
 }

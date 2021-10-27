@@ -11,20 +11,28 @@ const Cards = ({foodsToShow}) => {
     const [clickedFoodIndex, setClickedFoodIndex] = useState()
 
     const handleShowSingleFoodModal = (event)=>{
-        setClickedFoodIndex(event.target.name);
-        setShowSingleFoodModal(true)
+        let i=0
+        while(true){
+            if(allFoods[i].id == event.target.name){
+                setClickedFoodIndex(i);
+                break;
+            }else{
+                ++i;
+            }
+        }
+        setShowSingleFoodModal(true);
     }
 
     return ( 
         <div className="row">
             {foodsToShow.map(foodToShow =>(
-                <SingleCard foodToShow={foodToShow} handleShowSingleFoodModal={handleShowSingleFoodModal}/>
+                <SingleCard foodToShow={foodToShow} handleShowSingleFoodModal={handleShowSingleFoodModal} allFoods={allFoods}/>
             ))}
             <Modal
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 show={showSingleFoodModal}>
-                <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]}/>
+                <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]} clickedFoodIndex={clickedFoodIndex}/>
             </Modal>
         </div>
      );

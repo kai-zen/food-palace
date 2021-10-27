@@ -7,11 +7,15 @@ const Section2 = () => {
     const setIconColors = ()=>{
         let heartIcon = document.getElementById('d2-heart-icon');
         let cartIcon = document.getElementById('d2-cart-icon');
-        if(allFoods[15].isItInFav && heartIcon){
+        if(allFoods[3].isItInFav && heartIcon){
             heartIcon.style.color = 'red';
-        }
-        if(allFoods[15].isItInCart && cartIcon){
+        }else{
+            heartIcon.style.color = 'var(--white)';
+        }   
+        if(allFoods[3].isItInCart && cartIcon){
             cartIcon.style.color = 'green';
+        }else{
+            cartIcon.style.color = 'var(--white)';
         }
     }
 
@@ -32,11 +36,11 @@ const Section2 = () => {
             {/* نمایش دسته بندی ها */}
             <div className="categoriesElementRow row">
                 <div className="categoriesElement offset-1 col-10 offset-md-6 col-md-6 offset-xl-7 col-xl-5">
-                    <input type="radio" className="catRadio" name='hi' id="d2cat1" defaultChecked hidden/>
+                    <input type="radio" className="catRadio" name='hi' id="d2cat1" hidden/>
                     <label htmlFor="d2cat1" className='label'>{categories[0]}</label>
                     <input type="radio" className="catRadio" name='hi' id="d2cat2" hidden/>
                     <label htmlFor="d2cat2" className='label'>{categories[1]}</label>
-                    <input type="radio" className="catRadio" name='hi' id="d2cat3" hidden/>
+                    <input type="radio" defaultChecked className="catRadio" name='hi' id="d2cat3" hidden/>
                     <label htmlFor="d2cat3" className='label'>{categories[2]}</label>
                 </div>
             </div>
@@ -47,7 +51,7 @@ const Section2 = () => {
                         <div id="d2-carousel">
                             <div class="carousel-inner rounded-circle">
                                 <div class="d2-carousel-item">
-                                    <img class="d2-carousel-img w-100" src={`/Images/فست فود/فیله سوخاری.jpg`} alt=""/>
+                                    <img class="d2-carousel-img w-100" src={`/Images/${allFoods[3].category}/${allFoods[3].name}.jpg`} alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -57,16 +61,16 @@ const Section2 = () => {
                 <div id="d2-left-part" className="col-12 col-md-5 col-lg-5 order-md-1">
                     <div id="d2-left-part-flex">
                         <div id="h1s-div">
-                            <h1 id="d2-h1-2">فیله سوخاری</h1>
+                            <h1 id="d2-h1-2">{allFoods[3].name}</h1>
                         </div>
                         <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیازا
                         </p>
                         <div id="d2-left-part-flex2">
                             <label className='d2leftPartIcons'>
-                                <i className="fas fa-heart" id='d2-heart-icon' onClick={(event)=>handleToggleToList(event.target, '15', true, true)}/>
+                                <i className="fas fa-heart" id='d2-heart-icon' onClick={(event)=>handleToggleToList(event.target, allFoods[3].id, true, true)}/>
                             </label>
                             <label className='d2leftPartIcons'>
-                                <i className="fas fa-shopping-cart" id='d2-cart-icon' onClick={(event)=>handleToggleToList(event.target, '15', false, true)}/>
+                                <i className="fas fa-shopping-cart" id='d2-cart-icon' onClick={(event)=>handleToggleToList(event.target, allFoods[3].id, false, true)}/>
                             </label>
                         </div>
                     </div>

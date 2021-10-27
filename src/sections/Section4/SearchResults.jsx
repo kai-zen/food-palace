@@ -9,8 +9,16 @@ const SearchResults = ({filteredFoods}) => {
     const [showSingleFoodModal, setShowSingleFoodModal] = useState(false);
     const [clickedFoodIndex, setClickedFoodIndex] = useState()
 
-    const handleShowSingleFoodModal = (id)=>{
-        setClickedFoodIndex(id);
+    const handleShowSingleFoodModal = (event)=>{
+        let i=0
+        while(true){
+            if(allFoods[i].id == event.target.id){
+                setClickedFoodIndex(i);
+                break;
+            }else{
+                ++i;
+            }
+        }
         setShowSingleFoodModal(true);
     }
 
@@ -20,7 +28,7 @@ const SearchResults = ({filteredFoods}) => {
                 <div
                 className='d4SearchResult'
                 id={filteredFood.id}
-                onClick={(e)=>handleShowSingleFoodModal(e.target.id)}
+                onClick={(e)=>handleShowSingleFoodModal(e)}
                 >
                     <img src={`Images/${filteredFood.category}/${filteredFood.name}.jpg`} alt="" style={{
                         pointerEvents: 'none'
@@ -37,7 +45,7 @@ const SearchResults = ({filteredFoods}) => {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 show={showSingleFoodModal}>
-                <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]}/>
+                <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]} clickedFoodIndex={clickedFoodIndex}/>
             </Modal> 
         </Fragment>
      );

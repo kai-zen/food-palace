@@ -5,12 +5,14 @@ import './adminPanel.css';
 import Foods from '../foods/Foods';
 import AddModal from './Modals/AddModal';
 import Section4 from '../sections/Section4/Section4';
+import LoginContext from '../structure/contexts/loginContext';
 import MainContext from './../structure/contexts/mainContext';
 import Wave from '../others/Wave';
 import { Redirect } from 'react-router';
 
 const AdminPanel = () => {
-    const {allFoods,loggedInUser} = useContext(MainContext);
+    const {allFoods} = useContext(MainContext);
+    const {loggedInUser} = useContext(LoginContext);
     const[showAddModal, setShowAddModal] = useState(false);
 
     const handleShowAddModal = () => {

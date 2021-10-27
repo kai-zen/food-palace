@@ -70,7 +70,7 @@ const GlobalState = props => {
         if(isFav){
           allFoods[foodIndex].isItInFav = false;
           let currentFavorites = [...favoriteFoods];
-          currentFavorites = currentFavorites.filter(food => food.id !== foodIndex);
+          currentFavorites = currentFavorites.filter(food => food.id !== allFoods[foodIndex].id);
           setFavoriteFoods(currentFavorites);
           if(isIcon){
             element.style.color = 'var(--white)'
@@ -78,7 +78,7 @@ const GlobalState = props => {
         }else{
           allFoods[foodIndex].isItInCart = false;
           let currentCartFoods = [...cartFoods];
-          currentCartFoods = currentCartFoods.filter(food => food.id !== foodIndex);
+          currentCartFoods = currentCartFoods.filter(food => food.id !== allFoods[foodIndex].id);
           setCartFoods(currentCartFoods);
           if(isIcon){
             element.style.color = 'var(--white)'
@@ -87,7 +87,17 @@ const GlobalState = props => {
           }
         }
       };
-      const handleToggleToList = (element, foodIndex, isFav, isIcon) =>{
+      const handleToggleToList = (element, foodId, isFav, isIcon) =>{
+        let i = 0;
+        let foodIndex = 0;
+        while(true){
+            if(allFoods[i].id == foodId){
+              foodIndex = i;
+              break;
+            }else{
+              ++i;
+            }
+        }
         if(isFav){
           allFoods[foodIndex].isItInFav ? handleRemoveFromList(element, foodIndex, true, isIcon) : handleAddToList(element, foodIndex, true, isIcon)
         }else{
@@ -113,6 +123,7 @@ const GlobalState = props => {
     return (
         <MainContext.Provider value={{
             allFoods: allFoods,
+            setAllFoods: setAllFoods,
             sonatiFoods: sonatiFoods,
             fastfoods: fastfoods,
             giahiFoods: giahiFoods,

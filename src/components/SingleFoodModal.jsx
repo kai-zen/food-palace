@@ -6,11 +6,9 @@ import LoginContext from '../structure/contexts/loginContext';
 import MainContext from '../structure/contexts/mainContext';
 import './singleFood.css'
 
-const SingleFoodModal = ({setShowSingleFoodModal, foodInfo}) => {
-    const context = useContext(MainContext);
+const SingleFoodModal = ({setShowSingleFoodModal, foodInfo, clickedFoodIndex}) => {
+    const {handleToggleToList} = useContext(MainContext);
     const {loggedInUser} = useContext(LoginContext);
-
-    const handleToggleToList = context.handleToggleToList;
 
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
@@ -35,7 +33,7 @@ const SingleFoodModal = ({setShowSingleFoodModal, foodInfo}) => {
                         aria-labelledby="contained-modal-title-vcenter"
                         centered
                         show={showDeleteModal}>
-                        <PanelDeleteModal setShowDeleteModal={setShowDeleteModal} />
+                        <PanelDeleteModal foodId={foodInfo.id} setShowDeleteModal={setShowDeleteModal} />
                     </Modal>
                     <button className='btn btn-lg btn-warning m-1' onClick={handleShowUpdateModal}>ویرایش غذا</button>
                     <Modal
@@ -54,10 +52,14 @@ const SingleFoodModal = ({setShowSingleFoodModal, foodInfo}) => {
     useEffect(() => {
         if(foodInfo.isItInFav){
             document.getElementById('heartIcon').style.color = 'red';
-        };
+        }else{
+            document.getElementById('heartIcon').style.color = 'var(--white)'; 
+        }
         if(foodInfo.isItInCart){
                 document.getElementById('cartIcon').style.color = 'green';
-        };
+        }else{
+            document.getElementById('heartIcon').style.color = 'var(--white)';
+        }
     });
 
     return ( 
