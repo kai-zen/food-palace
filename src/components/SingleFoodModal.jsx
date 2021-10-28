@@ -6,7 +6,7 @@ import LoginContext from '../structure/contexts/loginContext';
 import MainContext from '../structure/contexts/mainContext';
 import './singleFood.css'
 
-const SingleFoodModal = ({setShowSingleFoodModal, foodInfo, clickedFoodIndex}) => {
+const SingleFoodModal = ({setShowSingleFoodModal, foodInfo, setClickedFoodIndex}) => {
     const {handleToggleToList} = useContext(MainContext);
     const {loggedInUser} = useContext(LoginContext);
 
@@ -21,7 +21,7 @@ const SingleFoodModal = ({setShowSingleFoodModal, foodInfo, clickedFoodIndex}) =
 
     const handleShowUpdateModal = () => {
         setShowUpdateModal(true);
-        document.getElementById('singleFoodModal').style.opacity = '0.5'; 
+        document.getElementById('singleFoodModal').style.opacity = '0.5';
     }
 
     const panelOptions = () => {
@@ -33,14 +33,16 @@ const SingleFoodModal = ({setShowSingleFoodModal, foodInfo, clickedFoodIndex}) =
                         aria-labelledby="contained-modal-title-vcenter"
                         centered
                         show={showDeleteModal}>
-                        <PanelDeleteModal foodId={foodInfo.id} setShowDeleteModal={setShowDeleteModal} />
+                        <PanelDeleteModal foodId={foodInfo.id} setShowDeleteModal={setShowDeleteModal}
+                        setClickedFoodIndex={setClickedFoodIndex}
+                        setShowSingleFoodModal={setShowSingleFoodModal}/>
                     </Modal>
                     <button className='btn btn-lg btn-warning m-1' onClick={handleShowUpdateModal}>ویرایش غذا</button>
                     <Modal
                         aria-labelledby="contained-modal-title-vcenter"
                         centered
                         show={showUpdateModal}>
-                        <UpdateModal setShowUpdateModal={setShowUpdateModal} foodInfo={foodInfo}/>
+                        <UpdateModal setShowUpdateModal={setShowUpdateModal} foodInfo={foodInfo} setShowSingleFoodModal={setShowSingleFoodModal}/>
                     </Modal>
                 </div>
             )
@@ -64,7 +66,7 @@ const SingleFoodModal = ({setShowSingleFoodModal, foodInfo, clickedFoodIndex}) =
 
     return ( 
         <div id="singleFoodModal">
-            <img src={`/Images/${foodInfo.category}/${foodInfo.name}.jpg`} alt="" className='rounded-circle' style={{
+            <img src={foodInfo.photo} alt="" className='rounded-circle' style={{
                 border: '2px solid black'
             }}/>
             <p className="singleFoodModalP">نام غذا: {foodInfo.name}</p>

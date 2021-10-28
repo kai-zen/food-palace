@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import MainContext from '../structure/contexts/mainContext';
 
 
@@ -35,7 +35,7 @@ const SingleCard = ({foodToShow, handleShowSingleFoodModal, allFoods}) => {
     return ( 
         <div className="card offset-2 col-8 offset-sm-0 col-sm-6 col-md-4 col-lg-3">
             <img className="card-img-top cardImage"
-            src={`/Images/${foodToShow.category}/${foodToShow.name}.jpg`} alt=""
+            src={foodToShow.photo} alt=""
             name={foodToShow.id}
             onClick={(e)=>handleShowSingleFoodModal(e)}/>
             <div className="card-body cardElement">

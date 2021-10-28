@@ -91,7 +91,7 @@ const GlobalState = props => {
         let i = 0;
         let foodIndex = 0;
         while(true){
-            if(allFoods[i].id == foodId){
+            if(allFoods[i].id === parseInt(foodId)){
               foodIndex = i;
               break;
             }else{

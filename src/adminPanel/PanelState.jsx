@@ -10,12 +10,18 @@ const PanelState = props => {
         context.setAllFoods(newAllFoods);
     }
 
+    const handleAddFood = (data) => {
+        let newAllFoods = [...context.allFoods]
+        newAllFoods.push(data);
+        context.setAllFoods(newAllFoods);
+    }
+
     return (
         <PanelContext.Provider value={{
             handleDeleteFood: handleDeleteFood,
+            handleAddFood: handleAddFood,
         }}>
             {props.children}
-            {console.log(context.allFoods)}
         </PanelContext.Provider>
     );
 }

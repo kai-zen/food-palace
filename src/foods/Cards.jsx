@@ -13,7 +13,7 @@ const Cards = ({foodsToShow}) => {
     const handleShowSingleFoodModal = (event)=>{
         let i=0
         while(true){
-            if(allFoods[i].id == event.target.name){
+            if(allFoods[i].id === parseInt(event.target.name)){
                 setClickedFoodIndex(i);
                 break;
             }else{
@@ -32,7 +32,7 @@ const Cards = ({foodsToShow}) => {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 show={showSingleFoodModal}>
-                <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]} clickedFoodIndex={clickedFoodIndex}/>
+                <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]} setClickedFoodIndex={setClickedFoodIndex}/>
             </Modal>
         </div>
      );

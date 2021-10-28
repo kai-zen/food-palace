@@ -51,7 +51,7 @@ const Section2 = () => {
                         <div id="d2-carousel">
                             <div class="carousel-inner rounded-circle">
                                 <div class="d2-carousel-item">
-                                    <img class="d2-carousel-img w-100" src={`/Images/${allFoods[3].category}/${allFoods[3].name}.jpg`} alt=""/>
+                                    <img class="d2-carousel-img w-100" src={allFoods[3].photo} alt=""/>
                                 </div>
                             </div>
                         </div>

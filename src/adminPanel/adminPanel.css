@@ -24,7 +24,7 @@
 #updateModal {
     border-radius: 10px;
     height: 500px;
-    background-color: var(--white);
+    background-color: lightgreen;
 }
 
 #addModal form,

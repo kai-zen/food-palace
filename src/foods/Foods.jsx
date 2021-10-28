@@ -23,20 +23,12 @@ const Foods = ({foodsToShow, titleOfThisMenu, renderFooterOrNot}) => {
     const nextPage = ()=>{
         if(foodsToShow.length/12 > currentPage ){
             setCurrentPage(currentPage+1);
-            if((foodsToShow.length/12)-1 >= currentPage){
-                document.getElementById('paginationNext').style.opacity = '0.5';
-            }
-            document.getElementById('paginationPrev').style.opacity = '1';
         }
     }
 
     const prevPage = ()=>{
         if(currentPage > 1){
             setCurrentPage(currentPage-1);
-            if(currentPage === 2){
-                document.getElementById('paginationPrev').style.opacity = '0.5';
-            }
-            document.getElementById('paginationNext').style.opacity = '1';
         }  
     }
 
@@ -63,7 +55,6 @@ const Foods = ({foodsToShow, titleOfThisMenu, renderFooterOrNot}) => {
                     }}>{currentPage}</button>
                     <Button id='paginationPrev' onClick={prevPage} style={{
                         backgroundColor: 'var(--gold)',
-                        opacity: '0.5'
                     }}>قبل</Button>
                 </Fragment>
             )

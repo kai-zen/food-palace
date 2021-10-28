@@ -6,7 +6,8 @@ export const allFoodsInfo = {
         category: 'سنتی',
         orderQuantity: 125,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/سنتی/قرمه سبزی.jpg',
     },
     gheyme: {
         id: 1,
@@ -15,7 +16,8 @@ export const allFoodsInfo = {
         category: 'سنتی',
         orderQuantity: 115,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/سنتی/قیمه.jpg',
     },
     koobide: {
         id: 2,
@@ -24,7 +26,8 @@ export const allFoodsInfo = {
         category: 'سنتی',
         orderQuantity: 128,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/سنتی/کوبیده.jpg',
     },
     morgheKamel: {
         id: 3,
@@ -33,7 +36,8 @@ export const allFoodsInfo = {
         category: 'سنتی',
         orderQuantity: 36,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/سنتی/مرغ کامل.jpg',
     },
     aashReshteh: {
         id: 4,
@@ -42,7 +46,8 @@ export const allFoodsInfo = {
         category: 'سنتی',
         orderQuantity: 16,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/سنتی/آش رشته.jpg',
     },
     dizi: {
         id: 5,
@@ -51,7 +56,8 @@ export const allFoodsInfo = {
         category: 'سنتی',
         orderQuantity: 72,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/سنتی/دیزی.jpg',
     },
     maahi: {
         id: 6,
@@ -60,7 +66,8 @@ export const allFoodsInfo = {
         category: 'سنتی',
         orderQuantity: 14,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/سنتی/ماهی.jpg',
     },
     joojeKabab: {
         id: 7,
@@ -69,7 +76,8 @@ export const allFoodsInfo = {
         category: 'سنتی',
         orderQuantity: 109,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/سنتی/جوجه کباب.jpg',
     },
     pizza: {
         id: 8,
@@ -78,7 +86,8 @@ export const allFoodsInfo = {
         category: 'فست فود',
         orderQuantity: 187,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/فست فود/پیتزای گوشت.jpg',
     },
     hamburger: {
         id: 9,
@@ -87,7 +96,8 @@ export const allFoodsInfo = {
         category: 'فست فود',
         orderQuantity: 217,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/فست فود/همبرگر.jpg',
     },
     pasta: {
         id: 10,
@@ -96,7 +106,8 @@ export const allFoodsInfo = {
         category: 'فست فود',
         orderQuantity: 66,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/فست فود/پاستا آلفردو.jpg',
     },
     wrapeMorgh: {
         id: 11,
@@ -105,7 +116,8 @@ export const allFoodsInfo = {
         category: 'فست فود',
         orderQuantity: 52,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/فست فود/رپ مرغ.jpg',
     },
     steak: {
         id: 12,
@@ -114,7 +126,8 @@ export const allFoodsInfo = {
         category: 'فست فود',
         orderQuantity: 40,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/فست فود/استیک.jpg',
     },
     steakeMorgh: {
         id: 13,
@@ -123,7 +136,8 @@ export const allFoodsInfo = {
         category: 'فست فود',
         orderQuantity: 51,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/فست فود/استیک مرغ.jpg',
     },
     pirashki: {
         id: 14,
@@ -132,7 +146,8 @@ export const allFoodsInfo = {
         category: 'فست فود',
         orderQuantity: 90,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/فست فود/پیراشکی.jpg',
     },
     sokhari: {
         id: 15,
@@ -141,7 +156,8 @@ export const allFoodsInfo = {
         category: 'فست فود',
         orderQuantity: 89,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/فست فود/فیله سوخاری.jpg',
     },
     homos: {
         id: 16,
@@ -150,7 +166,8 @@ export const allFoodsInfo = {
         category: 'گیاهی',
         orderQuantity: 22,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/گیاهی/حمص.jpg',
     },
     taco: {
         id: 17,
@@ -159,7 +176,8 @@ export const allFoodsInfo = {
         category: 'گیاهی',
         orderQuantity: 30,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/گیاهی/تاکو گیاهی.jpg',
     },
     vegeterianPizza: {
         id: 18,
@@ -168,7 +186,8 @@ export const allFoodsInfo = {
         category: 'گیاهی',
         orderQuantity: 44,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/گیاهی/پیتزای سبزیجات.jpg',
     },
     pooreSibzamini: {
         id: 19,
@@ -177,7 +196,8 @@ export const allFoodsInfo = {
         category: 'گیاهی',
         orderQuantity: 9,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/گیاهی/پوره سیب زمینی.jpg',
     },
     pancake: {
         id: 20,
@@ -186,7 +206,8 @@ export const allFoodsInfo = {
         category: 'گیاهی',
         orderQuantity: 61,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/گیاهی/پنکیک کاراملی.jpg',
     },
     crap: {
         id: 21,
@@ -195,7 +216,8 @@ export const allFoodsInfo = {
         category: 'گیاهی',
         orderQuantity: 32,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/گیاهی/کرپ توت فرنگی.jpg',
     },
     cake: {
         id: 22,
@@ -204,7 +226,8 @@ export const allFoodsInfo = {
         category: 'گیاهی',
         orderQuantity: 87,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/گیاهی/کیک خامه ای.jpg',
     },
     sweet: {
         id: 23,
@@ -213,6 +236,7 @@ export const allFoodsInfo = {
         category: 'گیاهی',
         orderQuantity: 49,
         isItInFav: false,
-        isItInCart: false
+        isItInCart: false,
+        photo: '/Images/گیاهی/شیرینی آلبالویی.jpg',
     },
 }
