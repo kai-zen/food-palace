@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SingleSearchResult = ({filteredFood, handleShowSingleFoodModal}) => {
+const SingleSearchResult = ({filteredFood, handleShowSingleFoodModal})=> {
     return ( 
         <div
-        className='d4SearchResult'
+        className='offset-1 col-10 offset-md-2 col-md-8 d4SearchResult'
         id={filteredFood.id}
         onClick={(e)=>handleShowSingleFoodModal(e)}>
             <img src={filteredFood.photo} alt="" style={{
@@ -12,9 +12,6 @@ const SingleSearchResult = ({filteredFood, handleShowSingleFoodModal}) => {
             <h2 className="card-title" style={{
                 pointerEvents: 'none'
             }}>{`${filteredFood.category} / ${filteredFood.name}`}</h2>
-            <button className='btn' style={{
-                pointerEvents: 'none'
-            }}>بیشتر...</button>
         </div>
      );
 }

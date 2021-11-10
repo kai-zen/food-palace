@@ -1,14 +1,11 @@
 import React, {useState, useContext} from 'react'
 import { Modal } from 'react-bootstrap';
 import { isEmpty } from 'lodash';
-import './adminPanel.css';
-import Foods from '../foods/Foods';
-import AddModal from './Modals/AddModal';
-import Section4 from '../sections/Section4/Section4';
 import LoginContext from '../structure/contexts/loginContext';
 import MainContext from './../structure/contexts/mainContext';
-import Wave from '../others/Wave';
 import { Redirect } from 'react-router';
+import Foods from './../components/foods/Foods';
+import AddModal from './../modals/AddModal';
 
 const AdminPanel = () => {
     const {allFoods} = useContext(MainContext);
@@ -45,8 +42,6 @@ const AdminPanel = () => {
                     </Modal>
                 <Foods foodsToShow={allFoods} titleOfThisMenu={null} renderFooterOrNot={false}/>
             </div>
-            <Wave/>
-            <Section4/>
         </div>
      );
 }

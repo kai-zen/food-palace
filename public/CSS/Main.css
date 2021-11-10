@@ -1,13 +1,15 @@
 :root {
+    --font-persian: 'Markazi Text', serif;
+    --font-english-title: 'Merienda', cursive;
     --gold: rgb(255, 155, 0);
-    --black: rgba(12, 12, 12, .9);
     --dark: #222831;
+    --black: rgba(0, 0, 0, .8);
     --white: #ededd0;
 }
 
 body {
     background-color: var(--dark);
-    font-family: 'Markazi Text', serif;
+    font-family: var(--font-persian)
 }
 
 a {
@@ -44,12 +46,6 @@ a:hover {
     background-position: right;
 }
 
-button:disabled {
-    opacity: .5;
-    background-color: var(--white);
-    color: var(--dark);
-}
-
 #div1 {
     background-color: rgba(0, 0, 0, .7);
     position: relative;
@@ -67,26 +63,26 @@ button:disabled {
 }
 
 #main-title {
-    font-family: 'Merienda', cursive;
-    font-size: 56px;
+    font-family: var(--font-english-title);
+    font-size: 45px;
 }
 
 #subtitle {
     font-family: 'Dr Sugirama', cursive;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #next-prev {
     position: absolute;
-    top: 200px;
-    left: 0px;
+    top: 195px;
+    left: 0;
     display: flex;
 }
 
 #next-prev a {
     position: relative;
-    height: 65px;
-    width: 65px;
+    height: 50px;
+    width: 50px;
     opacity: 1;
     padding: 0 !important;
 }
@@ -96,13 +92,12 @@ button:disabled {
 }
 
 #next-prev a i {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 #slider {
     position: relative;
     margin-top: 167px;
-    margin-bottom: 10px;
     left: 15px;
 }
 
@@ -136,15 +131,6 @@ label {
     margin: 0 !important;
 }
 
-.carousel-caption a {
-    font-size: 14px;
-}
-
-.carousel-caption .btn-warning {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 #dots-box {
     width: 35%;
     height: 80px;
@@ -161,6 +147,8 @@ label {
 #dots-box ol li {
     min-width: 15px;
     min-height: 15px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     border: 4px solid transparent;
     transition: .5s;
@@ -175,8 +163,7 @@ label {
 /* کامپوننت کتگوری ها */
 
 .categoriesElementRow {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 .categoriesElement {
@@ -208,7 +195,7 @@ label {
 #div2 {
     clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
     padding-top: 35px;
-    padding-bottom: 18%;
+    padding-bottom: 12%;
     background-color: var(--white);
     position: relative;
 }
@@ -220,13 +207,12 @@ label {
 }
 
 #d2-carousel .carousel-inner {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     box-shadow: 5px 5px 23px -3px #000000;
 }
 
 #d2-left-part-flex {
-    margin-top: 60px;
     position: relative;
     width: 100%;
     display: flex;
@@ -237,25 +223,27 @@ label {
 
 #h1s-div {
     width: 100%;
-    height: 60px;
-    margin-bottom: 20px;
+    height: 50px;
+    margin-bottom: 10px;
 }
 
 #d2-left-part-flex div h1 {
     position: absolute;
     right: 5%;
-    margin-top: 40px;
+    margin-top: 25px;
     white-space: nowrap;
-    font-size: 3rem;
+    font-size: 40px;
 }
 
 #d2-left-part-flex p {
-    margin-top: 55px;
+    font-size: 18px;
+    margin-top: 30px;
     text-align: right;
     padding: 0 5%;
 }
 
 #d2-left-part-flex2 {
+    margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -263,16 +251,16 @@ label {
     padding-right: 5%;
 }
 
-#d2-left-part-flex .d2leftPartIcons {
+.d2leftPartIcons {
     color: var(--white);
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    line-height: 55px;
+    line-height: 45px;
     background-color: var(--dark);
     border-radius: 50%;
-    font-size: 1.5rem;
-    margin-left: 20px;
+    font-size: 20px;
+    margin-left: 17px;
     cursor: pointer;
     transition: .5s;
 }
@@ -288,10 +276,10 @@ label {
     color: var(--white);
     display: flex;
     direction: rtl;
-    font-size: 28px;
-    width: 50%;
-    height: 60px;
-    margin: 40px 0 40px 50%;
+    font-size: 24px;
+    width: 90%;
+    height: 50px;
+    margin: 40px 0 40px 5%;
     padding: 5px;
     border: 3px solid var(--gold);
     border-radius: 10px;
@@ -313,8 +301,8 @@ label {
 }
 
 #noResults h1 {
-    font-size: 3rem;
-    text-shadow: 18px 0px 16px var(--gold);
+    font-size: 25px;
+    text-shadow: 18px 0 16px var(--gold);
     font-weight: 900;
-    font-family: 'Markazi Text', serif !important;
+    font-family: var(--font-persian) !important;
 }

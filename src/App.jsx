@@ -1,24 +1,24 @@
 import React, {Fragment, useContext} from 'react';
 import { Route, Switch } from 'react-router';
 
-import MainNav from './navigation/MainNav';
+import MainNav from './components/navigation/MainNav';
 import FirstSection from './sections/Section1/FirstSection';
 import Section2 from './sections/Section2';
-import ThirdSection from './sections/Section3/Section3';
+import ThirdSection from './sections/Section3';
 import Section4 from './sections/Section4/Section4';
-import Foods from './foods/Foods';
-import LoginComponent from './components/LoginComponent/LoginComponent';
-import MainContext from './structure/contexts/mainContext';
-import Cart from './foods/ShoppingCart';
+import Foods from './components/foods/Foods';
+import Cart from './components/foods/components/ShoppingCart';
 import Footer from './others/Footer';
-import NavState from './navigation/NavState';
 import Wave from './others/Wave';
-import LoginState from './components/LoginComponent/LoginState';
-import LoginContext from './structure/contexts/loginContext';
 import NotFound404 from './others/404';
-import FavoriteFoods from './foods/FavoriteFoods';
+import FavoriteFoods from './components/foods/components/FavoriteFoods';
 import AdminPanel from './adminPanel/AdminPanel';
+import LoginComponent from './components/login/LoginComponent';
+
 import PanelState from './adminPanel/PanelState';
+import LoginState from './components/login/LoginState';
+import LoginContext from './structure/contexts/loginContext';
+import MainContext from './structure/contexts/mainContext';
 
 const App = () => {
   window.addEventListener('load', () => {
@@ -30,9 +30,7 @@ const App = () => {
       <Fragment>
         <PanelState>
           <LoginState>
-            <NavState>
-              <MainNav/>
-            </NavState>    
+            <MainNav/> 
             <Switch>
               <Route path="/login" component={LoginComponent} />
               <Route path="/sonati-foods" render={()=><Foods foodsToShow={context.sonatiFoods} titleOfThisMenu='غذاهای سنتی' renderFooterOrNot={true}/>} />

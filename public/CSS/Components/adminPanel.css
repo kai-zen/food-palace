@@ -1,0 +1,39 @@
+#adminPanelParent {
+    width: 100%;
+    background-color: var(--dark);
+    padding-top: 90px;
+}
+
+#adminPanelParent .h1 {
+    font-family: var(--font-english-title);
+    text-align: center;
+    color: var(--gold);
+    font-size: 80px;
+}
+
+#addNewFood {
+    width: 17rem;
+    margin-bottom: 30px;
+    margin-left: calc(98% - 17rem)
+}
+
+
+/* مدال افزودن غذای جدید */
+
+#addModal,
+#updateModal {
+    border-radius: 10px;
+    height: 500px;
+    background-color: lightgreen;
+}
+
+#addModal form,
+#updateModal form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 50px;
+    text-align: right;
+    direction: rtl;
+}

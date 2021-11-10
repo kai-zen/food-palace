@@ -1,0 +1,36 @@
+/* مدال صفحه کاربر */
+
+#userModal {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    padding: 40px;
+}
+
+#userModal h1 {
+    font-size: 2rem;
+}
+
+#userModal img {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 20px;
+}
+
+#userModalEmail {
+    direction: rtl;
+}
+
+#userModal .btn {
+    font-size: 18px;
+    width: 140px;
+}
+
+#userModal .btn:first-child {
+    margin-right: 20px;
+}

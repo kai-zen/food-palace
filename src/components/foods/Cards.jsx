@@ -1,16 +1,19 @@
-import React, {Fragment, useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Modal } from 'react-bootstrap';
+import MainContext from '../../structure/contexts/mainContext';
+import SingleCard from './SingleCard';
 import SingleFoodModal from './../../modals/SingleFoodModal';
-import SingleSearchResult from './SingleSearchResult';
 
-const SearchResults = ({filteredFoods, allFoods}) => {
+const Cards = ({foodsToShow}) => {
+    const {allFoods} = useContext(MainContext);
+
     const [showSingleFoodModal, setShowSingleFoodModal] = useState(false);
     const [clickedFoodIndex, setClickedFoodIndex] = useState()
 
     const handleShowSingleFoodModal = (event)=>{
         let i=0
         while(true){
-            if(allFoods[i].id === parseInt(event.target.id)){
+            if(allFoods[i].id === parseInt(event.target.name)){
                 setClickedFoodIndex(i);
                 break;
             }else{
@@ -20,19 +23,21 @@ const SearchResults = ({filteredFoods, allFoods}) => {
         setShowSingleFoodModal(true);
     }
 
-    return (
-        <Fragment>
-            {filteredFoods.map(filteredFood => (
-                <SingleSearchResult filteredFood={filteredFood} handleShowSingleFoodModal={handleShowSingleFoodModal}/>  
+    return ( 
+        <div className="row">
+            {foodsToShow.map(foodToShow =>(
+                <SingleCard foodToShow={foodToShow} handleShowSingleFoodModal={handleShowSingleFoodModal} allFoods={allFoods}/>
             ))}
             <Modal
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 show={showSingleFoodModal}>
                 <SingleFoodModal setShowSingleFoodModal={setShowSingleFoodModal} foodInfo={allFoods[clickedFoodIndex]} setClickedFoodIndex={setClickedFoodIndex}/>
-            </Modal> 
-        </Fragment>
+            </Modal>
+        </div>
      );
 }
  
-export default SearchResults;
+export default Cards;
+
+            

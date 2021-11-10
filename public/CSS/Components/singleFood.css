@@ -1,0 +1,33 @@
+/* کامپوننت تک غذا */
+
+#singleFoodModal {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    padding: 40px;
+}
+
+#singleFoodModal img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+#singleFoodModal h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#singleFoodModal div .btn {
+    font-size: 14px;
+    width: 140px;
+}
+
+#singleFoodModal div .btn:first-child {
+    margin-right: 20px;
+}

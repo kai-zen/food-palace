@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './loginRequest.css'
+import './CSS/loginRequest.css'
 
 const LoginRequest = () => {
     const clickToClose = () => {

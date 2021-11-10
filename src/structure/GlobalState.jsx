@@ -4,32 +4,33 @@ import { allFoodsInfo } from './allFoodsInfo';
 
 const GlobalState = props => {
     // همه غذاها
-    const [allFoods, setAllFoods] = useState([
-        allFoodsInfo.ghormeSabzi,
-        allFoodsInfo.gheyme,
-        allFoodsInfo.koobide,
-        allFoodsInfo.morgheKamel,
-        allFoodsInfo.aashReshteh,
-        allFoodsInfo.dizi,
-        allFoodsInfo.maahi,
-        allFoodsInfo.joojeKabab,
-        allFoodsInfo.pizza,
-        allFoodsInfo.hamburger,
-        allFoodsInfo.pasta,
-        allFoodsInfo.wrapeMorgh,
-        allFoodsInfo.steak,
-        allFoodsInfo.steakeMorgh,
-        allFoodsInfo.pirashki,
-        allFoodsInfo.sokhari,
-        allFoodsInfo.homos,
-        allFoodsInfo.taco,
-        allFoodsInfo.vegeterianPizza,
-        allFoodsInfo.pooreSibzamini,
-        allFoodsInfo.pancake,
-        allFoodsInfo.crap,
-        allFoodsInfo.cake,
-        allFoodsInfo.sweet,
-      ]);
+    const foodsInfoFromFile = [
+      allFoodsInfo.ghormeSabzi,
+      allFoodsInfo.gheyme,
+      allFoodsInfo.koobide,
+      allFoodsInfo.morgheKamel,
+      allFoodsInfo.aashReshteh,
+      allFoodsInfo.dizi,
+      allFoodsInfo.maahi,
+      allFoodsInfo.joojeKabab,
+      allFoodsInfo.pizza,
+      allFoodsInfo.hamburger,
+      allFoodsInfo.pasta,
+      allFoodsInfo.wrapeMorgh,
+      allFoodsInfo.steak,
+      allFoodsInfo.steakeMorgh,
+      allFoodsInfo.pirashki,
+      allFoodsInfo.sokhari,
+      allFoodsInfo.homos,
+      allFoodsInfo.taco,
+      allFoodsInfo.vegeterianPizza,
+      allFoodsInfo.pooreSibzamini,
+      allFoodsInfo.pancake,
+      allFoodsInfo.crap,
+      allFoodsInfo.cake,
+      allFoodsInfo.sweet,
+    ]
+    const [allFoods, setAllFoods] = useState(foodsInfoFromFile);
 
       // غذاهای هر منو
       const sonatiFoods = [...allFoods.filter(eachFood => eachFood.category==='سنتی')];
@@ -103,8 +104,7 @@ const GlobalState = props => {
         }else{
           allFoods[foodIndex].isItInCart ? handleRemoveFromList(element, foodIndex, false, isIcon):handleAddToList(element, foodIndex, false, isIcon)
         }   
-      }
-      
+      }  
 
       //کامپوننت محاسبه قیمت
       const handleCalculater = () => {
@@ -120,6 +120,7 @@ const GlobalState = props => {
           return totalPrice;
         }    
       }
+
     return (
         <MainContext.Provider value={{
             allFoods: allFoods,

@@ -1,6 +1,6 @@
 import React, {Fragment, useRef, useState} from 'react'
 import SimpleReactValidator from 'simple-react-validator';
-import './footer.css'
+import './CSS/footer.css'
 import Wave2 from './Wave2';
 
 const Footer  = () => {
